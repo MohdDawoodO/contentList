@@ -22,6 +22,8 @@ export default function Nav() {
 
   const currentPage = content.filter((a) => pathname.includes(a.path))[0];
 
+  if (!currentPage) return null;
+
   return (
     <nav className="min-h-[40vh] lg:min-h-[50vh]  relative">
       <div
