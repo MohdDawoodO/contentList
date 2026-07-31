@@ -3,40 +3,11 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
-import gamesBG from "@/assets/backgrounds/games-bg.jpg";
-import animeBG from "@/assets/backgrounds/anime-bg.jpg";
-import moviesBG from "@/assets/backgrounds/movies-bg.jpg";
 import Image from "next/image";
+import { content } from "@/data/common-data";
 
 export default function Home() {
   const [currentID, setCurrentID] = useState(0);
-
-  const content = [
-    {
-      title: "Game",
-      body: "games",
-      accent: "0ebb47",
-      bg: "0b0e0c",
-      link: "/game",
-      image: gamesBG,
-    },
-    {
-      title: "Anime",
-      body: "anime",
-      accent: "d40003",
-      bg: "0d0b0b",
-      link: "/anime",
-      image: animeBG,
-    },
-    {
-      title: "Movie",
-      body: "movies",
-      accent: "1a6dda",
-      bg: "0b0d0e",
-      link: "/movie",
-      image: moviesBG,
-    },
-  ];
 
   const paragraphs = [
     `Content List is a personal website created by Mohd Dawood to organise and keep track of his ${content[currentID].body}.`,
@@ -77,6 +48,7 @@ export default function Home() {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 0.5 }}
+                loading="eager"
               />
             </motion.div>
           );
@@ -84,7 +56,7 @@ export default function Home() {
       </AnimatePresence>
 
       <div className="flex flex-col justify-center items-center gap-8 max-w-2xl z-10">
-        <div className="flex text-3xl font-semibold overflow-hidden relative">
+        <div className="flex text-2xl sm:text-3xl font-semibold overflow-hidden relative">
           <AnimatePresence mode="popLayout">
             {content.map((item, i) => {
               if (currentID !== i) return;
@@ -110,7 +82,7 @@ export default function Home() {
           <h1>List</h1>
         </div>
 
-        <div className="flex flex-col text-center text-lg text-[#BDBDBD] gap-4 sm:text-xl">
+        <div className="flex flex-col text-center text-sm sm:text-lg text-[#BDBDBD] gap-4 md:text-xl">
           {paragraphs.map((p) => (
             <p key={p}>{p}</p>
           ))}
@@ -118,16 +90,17 @@ export default function Home() {
 
         <div className="flex gap-4 sm:gap-6">
           {content.map((item) => (
-            <button
-              key={item.title}
-              className="p-2 px-4 w-22 rounded-md cursor-pointer hover:translate-y-px active:translate-y-1 duration-100 font-semibold"
-              style={{
-                background: "#" + item.accent,
-                boxShadow: `0px 0px 25px #${item.accent}80`,
-              }}
-            >
-              <Link href={item.link}>{item.title}</Link>
-            </button>
+            <Link key={item.title} href={item.path}>
+              <button
+                className="p-2 w-18 sm:w-22 text-sm sm:text-lg rounded-md cursor-pointer hover:translate-y-px active:translate-y-1 duration-100 font-semibold"
+                style={{
+                  background: "#" + item.accent,
+                  boxShadow: `0px 0px 25px #${item.accent}80`,
+                }}
+              >
+                {item.title}
+              </button>
+            </Link>
           ))}
         </div>
       </div>

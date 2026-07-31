@@ -6,6 +6,7 @@ export const animeData: {
   coverImage: string;
   watched: boolean;
   status: "ongoing" | "finished";
+  trailer: string;
 }[] = [
   {
     id: 1,
@@ -15,6 +16,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/death-note.jpg",
     watched: true,
     status: "finished",
+    trailer: "https://youtube.com/",
   },
   {
     id: 2,
@@ -24,6 +26,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/bleach.jpg",
     watched: true,
     status: "ongoing",
+    trailer: "https://youtube.com/",
   },
   {
     id: 3,
@@ -33,6 +36,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/naruto.jpg",
     watched: true,
     status: "finished",
+    trailer: "https://youtube.com/",
   },
   {
     id: 4,
@@ -42,6 +46,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/jujutsu-kaisen.jpg",
     watched: true,
     status: "ongoing",
+    trailer: "https://youtube.com/",
   },
   {
     id: 5,
@@ -51,6 +56,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/demon-slayer.jpg",
     watched: true,
     status: "ongoing",
+    trailer: "https://youtube.com/",
   },
   {
     id: 6,
@@ -60,6 +66,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/solo-leveling.jpg",
     watched: true,
     status: "ongoing",
+    trailer: "https://youtube.com/",
   },
   {
     id: 7,
@@ -69,6 +76,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/attack-on-titan.jpg",
     watched: true,
     status: "finished",
+    trailer: "https://youtube.com/",
   },
   {
     id: 8,
@@ -78,6 +86,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/dororo.jpg",
     watched: false,
     status: "finished",
+    trailer: "https://youtube.com/",
   },
   {
     id: 9,
@@ -87,6 +96,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/mashle-magic-and-muscles.jpg",
     watched: true,
     status: "ongoing",
+    trailer: "https://youtube.com/",
   },
   {
     id: 10,
@@ -96,6 +106,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/tokyo-ghoul.jpg",
     watched: false,
     status: "finished",
+    trailer: "https://youtube.com/",
   },
   {
     id: 11,
@@ -105,6 +116,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/onimusha.jpg",
     watched: true,
     status: "finished",
+    trailer: "https://youtube.com/",
   },
   {
     id: 12,
@@ -114,6 +126,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/one-punch-man.jpg",
     watched: false,
     status: "ongoing",
+    trailer: "https://youtube.com/",
   },
   {
     id: 13,
@@ -123,6 +136,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/dr-stone.jpg",
     watched: false,
     status: "finished",
+    trailer: "https://youtube.com/",
   },
   {
     id: 14,
@@ -132,6 +146,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/the-promised-neverland.jpg",
     watched: true,
     status: "finished",
+    trailer: "https://youtube.com/",
   },
   {
     id: 15,
@@ -141,6 +156,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/vinland-saga.jpg",
     watched: true,
     status: "ongoing",
+    trailer: "https://youtube.com/",
   },
   {
     id: 16,
@@ -150,6 +166,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/spy-x-family.jpg",
     watched: true,
     status: "ongoing",
+    trailer: "https://youtube.com/",
   },
   {
     id: 17,
@@ -159,6 +176,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/blue-lock.jpg",
     watched: false,
     status: "ongoing",
+    trailer: "https://youtube.com/",
   },
   {
     id: 18,
@@ -168,6 +186,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/monster.jpg",
     watched: false,
     status: "finished",
+    trailer: "https://youtube.com/",
   },
   {
     id: 19,
@@ -177,6 +196,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/made-in-abyss.jpg",
     watched: false,
     status: "ongoing",
+    trailer: "https://youtube.com/",
   },
   {
     id: 20,
@@ -186,6 +206,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/uzumaki.jpg",
     watched: false,
     status: "finished",
+    trailer: "https://youtube.com/",
   },
   {
     id: 21,
@@ -195,6 +216,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/beyblade.jpg",
     watched: false,
     status: "ongoing",
+    trailer: "https://youtube.com/",
   },
   {
     id: 22,
@@ -204,6 +226,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/moriarty-the-patriot.jpg",
     watched: false,
     status: "ongoing",
+    trailer: "https://youtube.com/",
   },
   {
     id: 23,
@@ -213,6 +236,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/tower-of-god.jpg",
     watched: false,
     status: "ongoing",
+    trailer: "https://youtube.com/",
   },
   {
     id: 24,
@@ -222,6 +246,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/summertime-rendering.jpg",
     watched: false,
     status: "finished",
+    trailer: "https://youtube.com/",
   },
   {
     id: 25,
@@ -231,6 +256,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/star-wars-visions.jpg",
     watched: false,
     status: "ongoing",
+    trailer: "https://youtube.com/",
   },
   {
     id: 26,
@@ -240,6 +266,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/hunter-x-hunter.jpg",
     watched: false,
     status: "ongoing",
+    trailer: "https://youtube.com/",
   },
   {
     id: 27,
@@ -249,6 +276,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/azumanga-daioh.jpg",
     watched: false,
     status: "finished",
+    trailer: "https://youtube.com/",
   },
   {
     id: 28,
@@ -258,6 +286,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/your-lie-in-april.jpg",
     watched: false,
     status: "finished",
+    trailer: "https://youtube.com/",
   },
   {
     id: 29,
@@ -267,6 +296,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/kaiju-no-8.jpg",
     watched: true,
     status: "ongoing",
+    trailer: "https://youtube.com/",
   },
   {
     id: 30,
@@ -276,6 +306,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/code-geass.jpg",
     watched: false,
     status: "finished",
+    trailer: "https://youtube.com/",
   },
   {
     id: 31,
@@ -285,6 +316,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/gintama.jpg",
     watched: false,
     status: "finished",
+    trailer: "https://youtube.com/",
   },
   {
     id: 32,
@@ -294,6 +326,7 @@ export const animeData: {
     coverImage: "@/assets/images/anime/steins-gate.jpg",
     watched: false,
     status: "finished",
+    trailer: "https://youtube.com/",
   },
   {
     id: 33,
@@ -303,5 +336,6 @@ export const animeData: {
     coverImage: "@/assets/images/anime/fullmetal-alchemist.jpg",
     watched: true,
     status: "finished",
+    trailer: "https://youtube.com/",
   },
 ];
