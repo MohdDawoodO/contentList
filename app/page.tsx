@@ -26,22 +26,22 @@ export default function Home() {
   const MotionImage = motion.create(Image);
 
   return (
-    <main className="min-h-dvh flex justify-center items-center px-4 sm:px-8">
+    <main className="flex min-h-dvh items-center justify-center px-4 sm:px-8">
       <AnimatePresence mode="wait">
         {content.map((item, i) => {
           if (currentID !== i) return;
           return (
             <motion.div
               key={item.title}
-              className="gradient w-full h-full absolute before:w-full before:h-full before:backdrop-blur-xs before:absolute before:z-1"
+              className="gradient absolute h-full w-full before:absolute before:z-1 before:h-full before:w-full before:backdrop-blur-xs"
               style={{
                 backgroundImage: `linear-gradient(#${item.bg}bf, #${item.bg}fc 80%)`,
               }}
             >
               <MotionImage
-                className="absolute w-full h-full object-cover object-top -z-1 pointer-events-none"
+                className="pointer-events-none absolute -z-1 h-full w-full object-cover object-top"
                 src={item.image}
-                alt="ss"
+                alt="background"
                 width={1920}
                 height={1080}
                 initial={{ opacity: 0 }}
@@ -55,8 +55,8 @@ export default function Home() {
         })}
       </AnimatePresence>
 
-      <div className="flex flex-col justify-center items-center gap-8 max-w-2xl z-10">
-        <div className="flex text-2xl sm:text-3xl font-semibold overflow-hidden relative">
+      <div className="z-10 flex max-w-2xl flex-col items-center justify-center gap-8">
+        <div className="relative flex overflow-hidden text-2xl font-semibold sm:text-3xl">
           <AnimatePresence mode="popLayout">
             {content.map((item, i) => {
               if (currentID !== i) return;
@@ -82,7 +82,7 @@ export default function Home() {
           <h1>List</h1>
         </div>
 
-        <div className="flex flex-col text-center text-sm sm:text-lg text-[#BDBDBD] gap-4 md:text-xl">
+        <div className="flex flex-col gap-4 text-center text-sm text-[#BDBDBD] sm:text-lg md:text-xl">
           {paragraphs.map((p) => (
             <p key={p}>{p}</p>
           ))}
@@ -90,12 +90,13 @@ export default function Home() {
 
         <div className="flex gap-4 sm:gap-6">
           {content.map((item) => (
-            <Link key={item.title} href={item.path}>
+            <Link key={item.title} href={item.path} tabIndex={-1}>
               <button
-                className="p-2 w-18 sm:w-22 text-sm sm:text-lg rounded-md cursor-pointer hover:translate-y-px active:translate-y-1 duration-100 font-semibold"
+                className="w-18 cursor-pointer rounded-md p-2 text-sm font-semibold duration-100 hover:translate-y-px focus:outline-4 active:translate-y-1 sm:w-22 sm:text-lg"
                 style={{
                   background: "#" + item.accent,
                   boxShadow: `0px 0px 25px #${item.accent}80`,
+                  outlineColor: "#" + item.accent + "50",
                 }}
               >
                 {item.title}
