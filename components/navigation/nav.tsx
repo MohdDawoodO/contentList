@@ -1,19 +1,22 @@
 "use client";
 
-import { content } from "@/data/common-data";
+import { pages } from "@/data/common-data";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import useParallax from "../utils/use-parallax";
 import Link from "next/link";
 import PopupNav from "./popup-nav";
+import Select from "./select-dropdown";
+import { searchAnimeState } from "@/utils/common-states";
+import { useAtom } from "jotai";
 
 export default function Nav() {
   const pathname = usePathname();
 
   useEffect(() => {
     const controller = useParallax();
-
+    scrollTo(0, 0);
     return () => {
       controller.abort();
     };
@@ -21,9 +24,11 @@ export default function Nav() {
 
   if (pathname === "/") return;
 
-  const currentPage = content.filter((a) => pathname.includes(a.path))[0];
+  const currentPage = pages.filter((a) => pathname.includes(a.path))[0];
 
   if (!currentPage) return null;
+
+  const [search, setSearch] = useAtom(searchAnimeState);
 
   return (
     <>
@@ -32,7 +37,7 @@ export default function Nav() {
           key={currentPage.title}
           className="background absolute h-full w-full before:absolute before:h-full before:w-full before:backdrop-blur-xs"
           style={{
-            backgroundImage: `linear-gradient(#${currentPage.bg}bf, #${currentPage.bg})`,
+            backgroundImage: `linear-gradient(${currentPage.bg}bf, ${currentPage.bg})`,
           }}
         >
           <Image
@@ -45,14 +50,14 @@ export default function Nav() {
             data-parallax="-65"
           />
         </div>
-        <div className="absolute flex h-4/5 w-full flex-col items-center justify-center gap-4 overflow-hidden sm:gap-8">
+        <div className="absolute flex h-4/5 w-full flex-col items-center justify-center gap-4 sm:gap-8">
           <Link href={currentPage.path}>
             <h1 className="text-2xl font-semibold sm:text-3xl">
               <span
                 key={currentPage.title}
                 style={{
-                  color: "#" + currentPage.accent,
-                  textShadow: `0px 0px 10px #${currentPage.accent}bf`,
+                  color: currentPage.accent,
+                  textShadow: `0px 0px 10px ${currentPage.accent}bf`,
                 }}
                 className={`w-24 text-end`}
               >
@@ -63,6 +68,8 @@ export default function Nav() {
           </Link>
           <div className="mx-4 flex w-full max-w-2xl px-4 text-sm sm:text-lg">
             <input
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
               type="text"
               placeholder={
                 "Type name of" +
@@ -71,23 +78,15 @@ export default function Nav() {
                 " " +
                 currentPage.title.toLowerCase()
               }
-              className="p-x2 inline-block w-full rounded-l-md bg-white p-1 px-2 font-semibold transition-all duration-100 focus:outline-4 sm:p-2 sm:px-4"
+              className="p-x2 inline-block w-full rounded-l-sm bg-white p-2 font-semibold transition-all duration-200 focus:outline-4 sm:p-2 sm:px-4"
               style={{
-                color: "#" + currentPage.accent,
-                background: "#" + currentPage.bg,
-                border: "2px solid #" + currentPage.accent,
-                outlineColor: "#" + currentPage.accent + "50",
+                color: currentPage.accent,
+                background: currentPage.bg + "75",
+                border: "2px solid " + currentPage.accent,
+                outlineColor: currentPage.accent + "50",
               }}
             />
-            <button
-              className="cursor-pointer rounded-r-md p-1 px-4 font-semibold transition-all duration-100 focus:outline-4 sm:p-2 sm:px-6"
-              style={{
-                background: "#" + currentPage.accent,
-                outlineColor: "#" + currentPage.accent + "50",
-              }}
-            >
-              Select
-            </button>
+            <Select currentPage={currentPage} />
           </div>
         </div>
       </nav>

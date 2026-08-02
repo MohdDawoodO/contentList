@@ -1,11 +1,47 @@
+import { StaticImageData } from "next/image";
+
+import deathNote from "@/assets/images/anime/death-note.jpg";
+import bleach from "@/assets/images/anime/bleach.jpg";
+import naruto from "@/assets/images/anime/naruto.jpg";
+import jujutsuKaisen from "@/assets/images/anime/jujutsu-kaisen.jpg";
+import demonSlayer from "@/assets/images/anime/demon-slayer.jpg";
+import soloLeveling from "@/assets/images/anime/solo-leveling.jpg";
+import attackOnTitan from "@/assets/images/anime/attack-on-titan.jpg";
+import dororo from "@/assets/images/anime/dororo.jpg";
+import mashle from "@/assets/images/anime/mashle-magic-and-muscles.jpg";
+import tokyoGhoul from "@/assets/images/anime/tokyo-ghoul.jpg";
+import onimusha from "@/assets/images/anime/onimusha.jpg";
+import onePunchMan from "@/assets/images/anime/one-punch-man.jpg";
+import drStone from "@/assets/images/anime/dr-stone.jpg";
+import promisedNeverland from "@/assets/images/anime/the-promised-neverland.jpg";
+import vinlandSaga from "@/assets/images/anime/vinland-saga.jpg";
+import spyXFamily from "@/assets/images/anime/spy-x-family.jpg";
+import blueLock from "@/assets/images/anime/blue-lock.jpg";
+import monster from "@/assets/images/anime/monster.jpg";
+import madeInAbyss from "@/assets/images/anime/made-in-abyss.jpg";
+import uzumaki from "@/assets/images/anime/uzumaki.jpg";
+import beyblade from "@/assets/images/anime/beyblade.jpg";
+import moriartyThePatriot from "@/assets/images/anime/moriarty-the-patriot.jpg";
+import towerOfGod from "@/assets/images/anime/tower-of-god.jpg";
+import summertimeRendering from "@/assets/images/anime/summertime-remdering.jpg";
+import starWars from "@/assets/images/anime/star-wars-visions.jpg";
+import hunterXHunter from "@/assets/images/anime/hunter-x-hunter.jpg";
+import azumanga from "@/assets/images/anime/azumanga-daioh.jpg";
+import yourLieInApril from "@/assets/images/anime/your-lie-in-april.jpg";
+import kaijuNo8 from "@/assets/images/anime/kaiju-no-8.jpg";
+import codeGeass from "@/assets/images/anime/code-geass.jpg";
+import gintama from "@/assets/images/anime/gintama.jpg";
+import steinsGate from "@/assets/images/anime/steins-gate.jpg";
+import fullmetalAlchemist from "@/assets/images/anime/fullmetal-alchemist-brotherhood.jpg";
+
 export const animeData: {
   id: number;
   name: string;
   episodes: number;
   rating: number;
-  coverImage: string;
+  coverImage: StaticImageData;
   watched: boolean;
-  status: "ongoing" | "finished";
+  status: "Ongoing" | "Finished";
   trailer: string;
 }[] = [
   {
@@ -13,9 +49,9 @@ export const animeData: {
     name: "Death Note",
     episodes: 37,
     rating: 8.9,
-    coverImage: "@/assets/images/anime/death-note.jpg",
+    coverImage: deathNote,
     watched: true,
-    status: "finished",
+    status: "Finished",
     trailer: "https://youtube.com/",
   },
   {
@@ -23,9 +59,9 @@ export const animeData: {
     name: "Bleach",
     episodes: 418,
     rating: 8.6,
-    coverImage: "@/assets/images/anime/bleach.jpg",
+    coverImage: bleach,
     watched: true,
-    status: "ongoing",
+    status: "Ongoing",
     trailer: "https://youtube.com/",
   },
   {
@@ -33,9 +69,9 @@ export const animeData: {
     name: "Naruto",
     episodes: 720,
     rating: 8.5,
-    coverImage: "@/assets/images/anime/naruto.jpg",
+    coverImage: naruto,
     watched: true,
-    status: "finished",
+    status: "Finished",
     trailer: "https://youtube.com/",
   },
   {
@@ -43,9 +79,9 @@ export const animeData: {
     name: "Jujutsu Kaisen",
     episodes: 59,
     rating: 8.5,
-    coverImage: "@/assets/images/anime/jujutsu-kaisen.jpg",
+    coverImage: jujutsuKaisen,
     watched: true,
-    status: "ongoing",
+    status: "Ongoing",
     trailer: "https://youtube.com/",
   },
   {
@@ -53,9 +89,9 @@ export const animeData: {
     name: "Demon Slayer",
     episodes: 63,
     rating: 8.5,
-    coverImage: "@/assets/images/anime/demon-slayer.jpg",
+    coverImage: demonSlayer,
     watched: true,
-    status: "ongoing",
+    status: "Ongoing",
     trailer: "https://youtube.com/",
   },
   {
@@ -63,9 +99,9 @@ export const animeData: {
     name: "Solo Leveling",
     episodes: 25,
     rating: 8.5,
-    coverImage: "@/assets/images/anime/solo-leveling.jpg",
+    coverImage: soloLeveling,
     watched: true,
-    status: "ongoing",
+    status: "Ongoing",
     trailer: "https://youtube.com/",
   },
   {
@@ -73,9 +109,9 @@ export const animeData: {
     name: "Attack on Titan",
     episodes: 89,
     rating: 9.1,
-    coverImage: "@/assets/images/anime/attack-on-titan.jpg",
+    coverImage: attackOnTitan,
     watched: true,
-    status: "finished",
+    status: "Finished",
     trailer: "https://youtube.com/",
   },
   {
@@ -83,9 +119,9 @@ export const animeData: {
     name: "Dororo",
     episodes: 24,
     rating: 8.2,
-    coverImage: "@/assets/images/anime/dororo.jpg",
+    coverImage: dororo,
     watched: false,
-    status: "finished",
+    status: "Finished",
     trailer: "https://youtube.com/",
   },
   {
@@ -93,9 +129,9 @@ export const animeData: {
     name: "Mashle: Magic and Muscles",
     episodes: 24,
     rating: 7.5,
-    coverImage: "@/assets/images/anime/mashle-magic-and-muscles.jpg",
+    coverImage: mashle,
     watched: true,
-    status: "ongoing",
+    status: "Ongoing",
     trailer: "https://youtube.com/",
   },
   {
@@ -103,9 +139,9 @@ export const animeData: {
     name: "Tokyo Ghoul",
     episodes: 50,
     rating: 7.7,
-    coverImage: "@/assets/images/anime/tokyo-ghoul.jpg",
+    coverImage: tokyoGhoul,
     watched: false,
-    status: "finished",
+    status: "Finished",
     trailer: "https://youtube.com/",
   },
   {
@@ -113,9 +149,9 @@ export const animeData: {
     name: "Onimusha",
     episodes: 8,
     rating: 6.8,
-    coverImage: "@/assets/images/anime/onimusha.jpg",
+    coverImage: onimusha,
     watched: true,
-    status: "finished",
+    status: "Finished",
     trailer: "https://youtube.com/",
   },
   {
@@ -123,9 +159,9 @@ export const animeData: {
     name: "One Punch Man",
     episodes: 36,
     rating: 8.6,
-    coverImage: "@/assets/images/anime/one-punch-man.jpg",
+    coverImage: onePunchMan,
     watched: false,
-    status: "ongoing",
+    status: "Ongoing",
     trailer: "https://youtube.com/",
   },
   {
@@ -133,9 +169,9 @@ export const animeData: {
     name: "Dr Stone",
     episodes: 95,
     rating: 8.1,
-    coverImage: "@/assets/images/anime/dr-stone.jpg",
+    coverImage: drStone,
     watched: false,
-    status: "finished",
+    status: "Finished",
     trailer: "https://youtube.com/",
   },
   {
@@ -143,9 +179,9 @@ export const animeData: {
     name: "The Promised Neverland",
     episodes: 12,
     rating: 8.9,
-    coverImage: "@/assets/images/anime/the-promised-neverland.jpg",
+    coverImage: promisedNeverland,
     watched: true,
-    status: "finished",
+    status: "Finished",
     trailer: "https://youtube.com/",
   },
   {
@@ -153,9 +189,9 @@ export const animeData: {
     name: "Vinland Saga",
     episodes: 48,
     rating: 8.9,
-    coverImage: "@/assets/images/anime/vinland-saga.jpg",
+    coverImage: vinlandSaga,
     watched: true,
-    status: "ongoing",
+    status: "Ongoing",
     trailer: "https://youtube.com/",
   },
   {
@@ -163,9 +199,9 @@ export const animeData: {
     name: "Spy x Family",
     episodes: 50,
     rating: 8.2,
-    coverImage: "@/assets/images/anime/spy-x-family.jpg",
+    coverImage: spyXFamily,
     watched: true,
-    status: "ongoing",
+    status: "Ongoing",
     trailer: "https://youtube.com/",
   },
   {
@@ -173,9 +209,9 @@ export const animeData: {
     name: "Blue Lock",
     episodes: 38,
     rating: 8.1,
-    coverImage: "@/assets/images/anime/blue-lock.jpg",
+    coverImage: blueLock,
     watched: false,
-    status: "ongoing",
+    status: "Ongoing",
     trailer: "https://youtube.com/",
   },
   {
@@ -183,9 +219,9 @@ export const animeData: {
     name: "Monster",
     episodes: 74,
     rating: 8.8,
-    coverImage: "@/assets/images/anime/monster.jpg",
+    coverImage: monster,
     watched: false,
-    status: "finished",
+    status: "Finished",
     trailer: "https://youtube.com/",
   },
   {
@@ -193,9 +229,9 @@ export const animeData: {
     name: "Made in Abyss",
     episodes: 25,
     rating: 8.3,
-    coverImage: "@/assets/images/anime/made-in-abyss.jpg",
+    coverImage: madeInAbyss,
     watched: false,
-    status: "ongoing",
+    status: "Ongoing",
     trailer: "https://youtube.com/",
   },
   {
@@ -203,9 +239,9 @@ export const animeData: {
     name: "Uzumaki",
     episodes: 4,
     rating: 6.4,
-    coverImage: "@/assets/images/anime/uzumaki.jpg",
+    coverImage: uzumaki,
     watched: false,
-    status: "finished",
+    status: "Finished",
     trailer: "https://youtube.com/",
   },
   {
@@ -213,9 +249,9 @@ export const animeData: {
     name: "Beyblade",
     episodes: 864,
     rating: 7.0,
-    coverImage: "@/assets/images/anime/beyblade.jpg",
+    coverImage: beyblade,
     watched: false,
-    status: "ongoing",
+    status: "Ongoing",
     trailer: "https://youtube.com/",
   },
   {
@@ -223,9 +259,9 @@ export const animeData: {
     name: "Moriarty The Patriot",
     episodes: 26,
     rating: 8.0,
-    coverImage: "@/assets/images/anime/moriarty-the-patriot.jpg",
+    coverImage: moriartyThePatriot,
     watched: false,
-    status: "ongoing",
+    status: "Ongoing",
     trailer: "https://youtube.com/",
   },
   {
@@ -233,9 +269,9 @@ export const animeData: {
     name: "Tower of God",
     episodes: 39,
     rating: 7.4,
-    coverImage: "@/assets/images/anime/tower-of-god.jpg",
+    coverImage: towerOfGod,
     watched: false,
-    status: "ongoing",
+    status: "Ongoing",
     trailer: "https://youtube.com/",
   },
   {
@@ -243,9 +279,9 @@ export const animeData: {
     name: "Summertime Rendering",
     episodes: 25,
     rating: 8.2,
-    coverImage: "@/assets/images/anime/summertime-rendering.jpg",
+    coverImage: summertimeRendering,
     watched: false,
-    status: "finished",
+    status: "Finished",
     trailer: "https://youtube.com/",
   },
   {
@@ -253,9 +289,9 @@ export const animeData: {
     name: "Star Wars: Visions",
     episodes: 27,
     rating: 7.0,
-    coverImage: "@/assets/images/anime/star-wars-visions.jpg",
+    coverImage: starWars,
     watched: false,
-    status: "ongoing",
+    status: "Ongoing",
     trailer: "https://youtube.com/",
   },
   {
@@ -263,9 +299,9 @@ export const animeData: {
     name: "Hunter x Hunter",
     episodes: 148,
     rating: 9.0,
-    coverImage: "@/assets/images/anime/hunter-x-hunter.jpg",
+    coverImage: hunterXHunter,
     watched: false,
-    status: "ongoing",
+    status: "Ongoing",
     trailer: "https://youtube.com/",
   },
   {
@@ -273,9 +309,9 @@ export const animeData: {
     name: "Azumanga Daioh",
     episodes: 26,
     rating: 8.2,
-    coverImage: "@/assets/images/anime/azumanga-daioh.jpg",
+    coverImage: azumanga,
     watched: false,
-    status: "finished",
+    status: "Finished",
     trailer: "https://youtube.com/",
   },
   {
@@ -283,9 +319,9 @@ export const animeData: {
     name: "Your Lie in April",
     episodes: 22,
     rating: 8.6,
-    coverImage: "@/assets/images/anime/your-lie-in-april.jpg",
+    coverImage: yourLieInApril,
     watched: false,
-    status: "finished",
+    status: "Finished",
     trailer: "https://youtube.com/",
   },
   {
@@ -293,9 +329,9 @@ export const animeData: {
     name: "Kaiju No. 8",
     episodes: 23,
     rating: 8.2,
-    coverImage: "@/assets/images/anime/kaiju-no-8.jpg",
+    coverImage: kaijuNo8,
     watched: true,
-    status: "ongoing",
+    status: "Ongoing",
     trailer: "https://youtube.com/",
   },
   {
@@ -303,9 +339,9 @@ export const animeData: {
     name: "Code Geass",
     episodes: 62,
     rating: 8.7,
-    coverImage: "@/assets/images/anime/code-geass.jpg",
+    coverImage: codeGeass,
     watched: false,
-    status: "finished",
+    status: "Finished",
     trailer: "https://youtube.com/",
   },
   {
@@ -313,9 +349,9 @@ export const animeData: {
     name: "Gintama",
     episodes: 367,
     rating: 8.7,
-    coverImage: "@/assets/images/anime/gintama.jpg",
+    coverImage: gintama,
     watched: false,
-    status: "finished",
+    status: "Finished",
     trailer: "https://youtube.com/",
   },
   {
@@ -323,9 +359,9 @@ export const animeData: {
     name: "Steins; Gate",
     episodes: 48,
     rating: 8.8,
-    coverImage: "@/assets/images/anime/steins-gate.jpg",
+    coverImage: steinsGate,
     watched: false,
-    status: "finished",
+    status: "Finished",
     trailer: "https://youtube.com/",
   },
   {
@@ -333,9 +369,9 @@ export const animeData: {
     name: "Fullmetal Alchemist: Brotherhood",
     episodes: 64,
     rating: 9.1,
-    coverImage: "@/assets/images/anime/fullmetal-alchemist.jpg",
+    coverImage: fullmetalAlchemist,
     watched: true,
-    status: "finished",
+    status: "Finished",
     trailer: "https://youtube.com/",
   },
 ];

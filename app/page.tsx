@@ -4,13 +4,13 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import Image from "next/image";
-import { content } from "@/data/common-data";
+import { pages } from "@/data/common-data";
 
 export default function Home() {
   const [currentID, setCurrentID] = useState(0);
 
   const paragraphs = [
-    `Content List is a personal website created by Mohd Dawood to organise and keep track of his ${content[currentID].body}.`,
+    `Content List is a personal website created by Mohd Dawood to organise and keep track of his ${pages[currentID].body}.`,
     "Although it's built around Mohd Dawood's collection, anyone can customise it by replacing the hardcoded data with their own.",
     "Click the buttons below to see what Mohd Dawood is up to.",
   ];
@@ -28,19 +28,19 @@ export default function Home() {
   return (
     <main className="flex min-h-dvh items-center justify-center px-4 sm:px-8">
       <AnimatePresence mode="wait">
-        {content.map((item, i) => {
+        {pages.map((page, i) => {
           if (currentID !== i) return;
           return (
             <motion.div
-              key={item.title}
+              key={page.title}
               className="gradient absolute h-full w-full before:absolute before:z-1 before:h-full before:w-full before:backdrop-blur-xs"
               style={{
-                backgroundImage: `linear-gradient(#${item.bg}bf, #${item.bg}fc 80%)`,
+                backgroundImage: `linear-gradient(${page.bg}bf, ${page.bg}fc 80%)`,
               }}
             >
               <MotionImage
                 className="pointer-events-none absolute -z-1 h-full w-full object-cover object-top"
-                src={item.image}
+                src={page.image}
                 alt="background"
                 width={1920}
                 height={1080}
@@ -58,14 +58,14 @@ export default function Home() {
       <div className="z-10 flex max-w-2xl flex-col items-center justify-center gap-8">
         <div className="relative flex overflow-hidden text-2xl font-semibold sm:text-3xl">
           <AnimatePresence mode="popLayout">
-            {content.map((item, i) => {
+            {pages.map((page, i) => {
               if (currentID !== i) return;
               return (
                 <motion.h1
-                  key={item.title}
+                  key={page.title}
                   style={{
-                    color: "#" + item.accent,
-                    textShadow: `0px 0px 10px #${item.accent}bf`,
+                    color: page.accent,
+                    textShadow: `0px 0px 10px ${page.accent}bf`,
                   }}
                   className={`w-24 text-end`}
                   initial={{ y: "-100%" }}
@@ -73,7 +73,7 @@ export default function Home() {
                   exit={{ y: "100%" }}
                   transition={{ duration: 1 }}
                 >
-                  {item.title}
+                  {page.title}
                 </motion.h1>
               );
             })}
@@ -89,17 +89,17 @@ export default function Home() {
         </div>
 
         <div className="flex gap-4 sm:gap-6">
-          {content.map((item) => (
-            <Link key={item.title} href={item.path} tabIndex={-1}>
+          {pages.map((page) => (
+            <Link key={page.title} href={page.path} tabIndex={-1}>
               <button
                 className="w-18 cursor-pointer rounded-md p-2 text-sm font-semibold duration-100 hover:translate-y-px focus:outline-4 active:translate-y-1 sm:w-22 sm:text-lg"
                 style={{
-                  background: "#" + item.accent,
-                  boxShadow: `0px 0px 25px #${item.accent}80`,
-                  outlineColor: "#" + item.accent + "50",
+                  background: page.accent,
+                  boxShadow: `0px 0px 25px ${page.accent}80`,
+                  outlineColor: page.accent + "50",
                 }}
               >
-                {item.title}
+                {page.title}
               </button>
             </Link>
           ))}
