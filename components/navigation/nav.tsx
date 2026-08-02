@@ -13,6 +13,7 @@ import { useAtom } from "jotai";
 
 export default function Nav() {
   const pathname = usePathname();
+  const [search, setSearch] = useAtom(searchAnimeState);
 
   useEffect(() => {
     const controller = useParallax();
@@ -27,8 +28,6 @@ export default function Nav() {
   const currentPage = pages.filter((a) => pathname.includes(a.path))[0];
 
   if (!currentPage) return null;
-
-  const [search, setSearch] = useAtom(searchAnimeState);
 
   return (
     <>
