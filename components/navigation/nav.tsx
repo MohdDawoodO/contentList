@@ -7,17 +7,20 @@ import { useEffect } from "react";
 import useParallax from "../utils/use-parallax";
 import Link from "next/link";
 import PopupNav from "./popup-nav";
-import Select from "./select-dropdown";
-import { searchAnimeState } from "@/utils/common-states";
+import Select from "../ui/select";
+import { searchAnimeState, sortMethodState } from "@/utils/common-states";
 import { useAtom } from "jotai";
 
 export default function Nav() {
   const pathname = usePathname();
   const [search, setSearch] = useAtom(searchAnimeState);
+  const [animeSortMethod, setAnimeSortMethod] = useAtom(sortMethodState);
 
   useEffect(() => {
     const controller = useParallax();
     scrollTo(0, 0);
+    setSearch("");
+
     return () => {
       controller.abort();
     };
@@ -85,11 +88,15 @@ export default function Nav() {
                 outlineColor: currentPage.accent + "50",
               }}
             />
-            <Select currentPage={currentPage} />
+            <Select
+              state={animeSortMethod}
+              setState={setAnimeSortMethod}
+              currentPage={currentPage}
+            />
           </div>
         </div>
       </nav>
-      <PopupNav currentPage={currentPage} pathname={pathname} />
+      <PopupNav currentPage={currentPage} pathname={pathname} search={search} />
     </>
   );
 }

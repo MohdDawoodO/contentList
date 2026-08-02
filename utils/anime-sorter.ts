@@ -10,11 +10,11 @@ type dataType = {
   status: "Ongoing" | "Finished";
 }[];
 
-export type methodType = "Default" | "(a-z)" | "Episodes" | "Rating";
+export type animeSortMethodType = "Default" | "(a-z)" | "Episodes" | "Rating";
 
 export function animeSorter(
   data: dataType,
-  method: methodType,
+  method: animeSortMethodType,
   searchInput: string,
 ) {
   const filteredData = data.filter((a) =>

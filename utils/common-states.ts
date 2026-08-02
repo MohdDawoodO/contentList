@@ -1,5 +1,5 @@
 import { atom } from "jotai";
-import { methodType } from "./anime-sorter";
+import { animeSortMethodType } from "./anime-sorter";
 
-export const sortMethodState = atom<methodType>("Default");
+export const sortMethodState = atom<animeSortMethodType>("Default");
 export const searchAnimeState = atom("");

@@ -19,7 +19,12 @@ export default function Anime() {
 
   return (
     <div className="bg-[#0d0b0b]">
-      <div className="max-w-8xl m-auto grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))] flex-wrap items-center justify-center gap-8 px-4 pb-24 2xl:grid-cols-[repeat(auto-fit,250px)] 2xl:px-0">
+      <div
+        className={
+          "max-w-8xl m-auto grid min-h-[60vh] grid-cols-[repeat(auto-fit,minmax(250px,1fr))] flex-wrap items-center justify-center gap-8 px-4 pt-4 pb-32 2xl:px-0 " +
+          (search ? "sm:grid-cols-[repeat(auto-fit,minmax(250px,280px))]" : "")
+        }
+      >
         {sortedAnime.map((anime) => (
           <AnimeCard
             key={anime.id}

@@ -8,9 +8,14 @@ import { AnimatePresence, motion } from "motion/react";
 type popupNavTypes = {
   currentPage: pagesDataType;
   pathname: string;
+  search: string;
 };
 
-export default function PopupNav({ currentPage, pathname }: popupNavTypes) {
+export default function PopupNav({
+  currentPage,
+  pathname,
+  search,
+}: popupNavTypes) {
   const [scroll, setScroll] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
   const [scrollHeight, setScrollHeight] = useState(0);
@@ -34,7 +39,7 @@ export default function PopupNav({ currentPage, pathname }: popupNavTypes) {
     window.addEventListener("scroll", scrollBehavior);
 
     return () => window.removeEventListener("scroll", scrollBehavior);
-  }, [pathname]);
+  }, [pathname, search]);
 
   const MotionLink = motion.create(Link);
 
@@ -42,10 +47,10 @@ export default function PopupNav({ currentPage, pathname }: popupNavTypes) {
 
   return (
     <AnimatePresence>
-      {scroll + windowHeight > scrollHeight * 0.95 && (
+      {scroll + windowHeight > scrollHeight * 0.99 && (
         <MotionLink
           href={nextList.path}
-          className="fixed bottom-8 left-1/2 z-50 w-fit -translate-x-1/2 rounded-full p-2 px-4 text-center text-sm backdrop-blur-sm duration-100 focus:outline-4 sm:text-lg"
+          className="fixed bottom-6 left-1/2 z-50 w-fit -translate-x-1/2 rounded-full bg-[rgba(0,0,0,0.25)] p-2 px-4 text-center text-sm backdrop-blur-sm duration-100 focus:outline-4 sm:text-lg"
 
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}

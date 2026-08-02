@@ -1,20 +1,33 @@
 import { pagesDataType } from "@/data/common-data";
-import { methodType } from "@/utils/anime-sorter";
+import { animeSortMethodType } from "@/utils/anime-sorter";
 import { sortMethodState } from "@/utils/common-states";
+import { SetStateAction } from "jotai";
 import { useAtom } from "jotai";
 import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 
 export default function Select({
+  state: sortMethod,
+  setState: setSortMethod,
   currentPage,
 }: {
+  state: string;
+  setState: Function;
   currentPage: pagesDataType;
 }) {
-  const [sortMethod, setSortMethod] = useAtom(sortMethodState);
   const [open, setOpen] = useState(false);
 
-  const sortTypes: methodType[] = ["Default", "(a-z)", "Episodes", "Rating"];
+  useEffect(() => {
+    setSortMethod("Default");
+  }, []);
+
+  const animeSortTypes: animeSortMethodType[] = [
+    "Default",
+    "(a-z)",
+    "Episodes",
+    "Rating",
+  ];
 
   return (
     <div className="relative h-full">
@@ -37,7 +50,7 @@ export default function Select({
             exit={{ y: -10, scale: 0.9, opacity: 0 }}
             transition={{ duration: 0.2 }}
           >
-            {sortTypes.map((method) => (
+            {animeSortTypes.map((method) => (
               <button
                 tabIndex={0}
                 key={method}
