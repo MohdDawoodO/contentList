@@ -4,7 +4,7 @@ import AnimeCard from "@/components/anime/anime-card";
 import { animeData } from "@/data/anime-data";
 import { pages } from "@/data/common-data";
 import { animeSorter } from "@/utils/anime-sorter";
-import { searchAnimeState, sortMethodState } from "@/utils/common-states";
+import { searchState, animeSortMethodState } from "@/utils/common-states";
 import { useAtom } from "jotai";
 import { usePathname } from "next/navigation";
 
@@ -12,8 +12,8 @@ export default function Anime() {
   const pathname = usePathname();
   const currentPage = pages.filter((a) => pathname.includes(a.path))[0];
 
-  const [sortMethod] = useAtom(sortMethodState);
-  const [search] = useAtom(searchAnimeState);
+  const [sortMethod] = useAtom(animeSortMethodState);
+  const [search] = useAtom(searchState);
 
   const sortedAnime = animeSorter(animeData, sortMethod, search);
 

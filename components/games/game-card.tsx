@@ -1,28 +1,26 @@
 import { pagesDataType } from "@/data/common-data";
 import Image, { StaticImageData } from "next/image";
 import Badge from "../ui/badge";
-import { FaEye, FaStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 import Tooltip from "../ui/tooltip";
 import { useRouter } from "next/navigation";
-import { MdInfo } from "react-icons/md";
+import { IoGameController } from "react-icons/io5";
 
-export default function AnimeCard({
+export default function GameCard({
   id,
   name,
-  episodes,
   rating,
-  watched,
   coverImage,
-  status,
+  played,
+  release,
   currentPage,
 }: {
   id: number;
   name: string;
-  episodes: number;
   rating: number;
-  watched: boolean;
+  release: Date;
   coverImage: StaticImageData;
-  status: "Ongoing" | "Finished";
+  played: boolean;
   currentPage: pagesDataType;
 }) {
   const router = useRouter();
@@ -33,18 +31,18 @@ export default function AnimeCard({
       tabIndex={0}
       onClick={(e) => {
         if (e.button === 1) {
-          window.open(`anime/${id}`);
+          window.open(`games/${id}`);
           return;
         }
 
         if (e.ctrlKey) {
-          window.open(`anime/${id}`);
+          window.open(`games/${id}`);
           return;
         }
-        router.push(`anime/${id}`);
+        router.push(`games/${id}`);
       }}
       onKeyDown={(e) => {
-        e.key === "Enter" && router.push(`anime/${id}`);
+        e.key === "Enter" && router.push(`games/${id}`);
       }}
       className="group flex cursor-pointer flex-col self-start rounded-md"
     >
@@ -67,27 +65,22 @@ export default function AnimeCard({
           backgroundColor={currentPage.secondary + "bf"}
           className="absolute right-1 bottom-1 p-1 px-3 backdrop-blur-xs"
         >
-          {episodes} Episodes
+          {(release.getMonth() < 10
+            ? "0" + release.getMonth()
+            : release.getMonth()) +
+            "-" +
+            release.getFullYear()}
         </Badge>
-        {watched && (
+        {played && (
           <Badge
             backgroundColor={currentPage.secondary + "bf"}
             className="absolute top-1 right-1 h-6 w-6 backdrop-blur-xs"
           >
-            <Tooltip tooltip="watched!" position="right">
-              <FaEye />
+            <Tooltip tooltip="played!" position="right">
+              <IoGameController />
             </Tooltip>
           </Badge>
         )}
-
-        <Badge
-          backgroundColor={currentPage.secondary + "bf"}
-          className="absolute top-1 left-1 h-6 w-6 backdrop-blur-xs"
-        >
-          <Tooltip tooltip={status + "!"} position="left">
-            <MdInfo />
-          </Tooltip>
-        </Badge>
       </div>
       <div
         className="z-1 h-full rounded-b-md p-2 py-3"

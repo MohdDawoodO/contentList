@@ -6,9 +6,10 @@ import Tooltip from "../ui/tooltip";
 import { useRouter } from "next/navigation";
 import { MdInfo } from "react-icons/md";
 
-export default function AnimeCard({
+export default function MovieCard({
   id,
   name,
+  release,
   episodes,
   rating,
   watched,
@@ -18,11 +19,13 @@ export default function AnimeCard({
 }: {
   id: number;
   name: string;
-  episodes: number;
+  episodes?: number;
+  release: Date;
   rating: number;
   watched: boolean;
   coverImage: StaticImageData;
-  status: "Ongoing" | "Finished";
+  status?: "Ongoing" | "Finished";
+  type: "movie" | "series";
   currentPage: pagesDataType;
 }) {
   const router = useRouter();
@@ -33,18 +36,18 @@ export default function AnimeCard({
       tabIndex={0}
       onClick={(e) => {
         if (e.button === 1) {
-          window.open(`anime/${id}`);
+          window.open(`movies/${id}`);
           return;
         }
 
         if (e.ctrlKey) {
-          window.open(`anime/${id}`);
+          window.open(`movies/${id}`);
           return;
         }
-        router.push(`anime/${id}`);
+        router.push(`movies/${id}`);
       }}
       onKeyDown={(e) => {
-        e.key === "Enter" && router.push(`anime/${id}`);
+        e.key === "Enter" && router.push(`movies/${id}`);
       }}
       className="group flex cursor-pointer flex-col self-start rounded-md"
     >
@@ -63,11 +66,18 @@ export default function AnimeCard({
         >
           <h3>{rating}</h3> <FaStar color="yellow" />
         </Badge>
+
         <Badge
           backgroundColor={currentPage.secondary + "bf"}
           className="absolute right-1 bottom-1 p-1 px-3 backdrop-blur-xs"
         >
-          {episodes} Episodes
+          {episodes
+            ? episodes + " Episodes"
+            : (release.getMonth() < 10
+                ? "0" + release.getMonth()
+                : release.getMonth()) +
+              "-" +
+              release.getFullYear()}
         </Badge>
         {watched && (
           <Badge
@@ -80,14 +90,16 @@ export default function AnimeCard({
           </Badge>
         )}
 
-        <Badge
-          backgroundColor={currentPage.secondary + "bf"}
-          className="absolute top-1 left-1 h-6 w-6 backdrop-blur-xs"
-        >
-          <Tooltip tooltip={status + "!"} position="left">
-            <MdInfo />
-          </Tooltip>
-        </Badge>
+        {status && (
+          <Badge
+            backgroundColor={currentPage.secondary + "bf"}
+            className="absolute top-1 left-1 h-6 w-6 backdrop-blur-xs"
+          >
+            <Tooltip tooltip={status + "!"} position="left">
+              <MdInfo />
+            </Tooltip>
+          </Badge>
+        )}
       </div>
       <div
         className="z-1 h-full rounded-b-md p-2 py-3"

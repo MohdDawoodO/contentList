@@ -1,35 +1,73 @@
+import { StaticImageData } from "next/image";
+
+import sherlock from "@/assets/images/movies/sherlock.jpg";
+import interstellar from "@/assets/images/movies/interstellar.jpg";
+import pussInBoots from "@/assets/images/movies/puss-in-boots.jpg";
+import theAdventuresOfTintin from "@/assets/images/movies/the-adventures-of-tintin.jpg";
+import wallE from "@/assets/images/movies/wall-e.jpg";
+
 export const movieData: {
   id: number;
   name: string;
   rating: number;
   episodes?: number;
-  status?: "Ongoing" | "Finsished";
-  release: number;
-  coverImage: string;
+  status?: "Ongoing" | "Finished";
+  release: Date;
+  coverImage: StaticImageData;
   watched: boolean;
   trailer: string;
-  type: "Movie" | "TV Show";
+  type: "movie" | "series";
 }[] = [
   {
     id: 1,
-    name: "...",
-    release: 2012 + 5 / 12, // year and month
-    rating: 8.2, // imdb rating
-    coverImage: "@/assets/images/movies/...",
-    watched: false,
+    name: "Sherlock",
+    release: new Date("2010-07-05"),
+    rating: 9,
+    episodes: 12,
+    status: "Finished",
+    coverImage: sherlock,
+    watched: true,
     trailer: "https://youtube.com/",
-    type: "Movie",
+    type: "series",
   },
   {
     id: 2,
-    name: "Sherlock",
-    episodes: 12,
-    rating: 9, // imdb rating
-    release: 2010 + 5 / 12, // year and month
-    coverImage: "@/assets/images/movies/...",
-    watched: true,
-    status: "Finsished",
+    name: "Interstellar",
+    release: new Date("2014-11-05"),
+    rating: 8.7,
+    coverImage: interstellar,
+    watched: false,
     trailer: "https://youtube.com/",
-    type: "Movie",
+    type: "movie",
+  },
+  {
+    id: 3,
+    name: "Puss in Boots: The Last Wish",
+    release: new Date("2022-12-21"),
+    rating: 7.9,
+    coverImage: pussInBoots,
+    watched: true,
+    trailer: "https://youtube.com/",
+    type: "movie",
+  },
+  {
+    id: 4,
+    name: "The Adventures of Tintin",
+    release: new Date("2011-10-22"),
+    rating: 7.3,
+    coverImage: theAdventuresOfTintin,
+    watched: true,
+    trailer: "https://youtube.com/",
+    type: "movie",
+  },
+  {
+    id: 5,
+    name: "Wall-E",
+    release: new Date("2008-06-27"),
+    rating: 7.3,
+    coverImage: wallE,
+    watched: true,
+    trailer: "https://youtube.com/",
+    type: "movie",
   },
 ];
