@@ -7,7 +7,6 @@ type dataType = {
   release: Date;
   coverImage: StaticImageData;
   played: boolean;
-  trailer: string;
 }[];
 
 export type gameSortMethodType = "Default" | "(a-z)" | "Latest" | "Oldest";

@@ -9,7 +9,6 @@ type dataType = {
   release: Date;
   coverImage: StaticImageData;
   watched: boolean;
-  trailer: string;
   type: "movie" | "series";
 }[];
 
