@@ -10,7 +10,7 @@ type dataType = {
   trailer: string;
 }[];
 
-export type gameSortMethodType = "Default" | "(a-z)" | "Release" | "Rating";
+export type gameSortMethodType = "Default" | "(a-z)" | "Latest" | "Oldest";
 
 export function gameSorter(
   data: dataType,
@@ -34,12 +34,13 @@ export function gameSorter(
     case "(a-z)":
       return filteredData.sort((a, b) => a.name.localeCompare(b.name));
 
-    case "Rating":
-      return filteredData.sort((a, b) => b.rating - a.rating);
-
-    case "Release":
+    case "Latest":
       return filteredData.sort(
         (a, b) => b.release.getTime() - a.release.getTime(),
+      );
+    case "Oldest":
+      return filteredData.sort(
+        (a, b) => a.release.getTime() - b.release.getTime(),
       );
   }
 }

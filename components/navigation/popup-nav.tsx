@@ -1,6 +1,5 @@
 "use client";
 import { pages, pagesDataType } from "@/data/common-data";
-import { StaticImageData } from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
@@ -19,8 +18,6 @@ export default function PopupNav({
   const [scroll, setScroll] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
   const [scrollHeight, setScrollHeight] = useState(0);
-  const listPage =
-    pathname === "/games" || pathname === "/anime" || pathname === "/movies";
 
   const pageIndex = pages.findIndex((a) => a === currentPage);
   const nextList = pages[(pageIndex + 1) % 3];
@@ -43,7 +40,7 @@ export default function PopupNav({
 
   const MotionLink = motion.create(Link);
 
-  if (!listPage) return;
+  if (pathname === "/") return;
 
   return (
     <AnimatePresence>

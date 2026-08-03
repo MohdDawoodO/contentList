@@ -3,7 +3,6 @@ import Image, { StaticImageData } from "next/image";
 import Badge from "../ui/badge";
 import { FaEye, FaStar } from "react-icons/fa";
 import Tooltip from "../ui/tooltip";
-import { useRouter } from "next/navigation";
 import { MdInfo } from "react-icons/md";
 
 export default function MovieCard({
@@ -28,30 +27,12 @@ export default function MovieCard({
   type: "movie" | "series";
   currentPage: pagesDataType;
 }) {
-  const router = useRouter();
-
   return (
     <div
       key={id}
-      tabIndex={0}
-      onClick={(e) => {
-        if (e.button === 1) {
-          window.open(`movies/${id}`);
-          return;
-        }
-
-        if (e.ctrlKey) {
-          window.open(`movies/${id}`);
-          return;
-        }
-        router.push(`movies/${id}`);
-      }}
-      onKeyDown={(e) => {
-        e.key === "Enter" && router.push(`movies/${id}`);
-      }}
-      className="group flex cursor-pointer flex-col self-start rounded-md"
+      className="group relative flex h-full flex-col self-start rounded-md"
     >
-      <div className="relative overflow-hidden rounded-t-md">
+      <div className="relative min-h-fit overflow-hidden rounded-t-md">
         <Image
           src={coverImage}
           alt={name}
@@ -73,7 +54,11 @@ export default function MovieCard({
         >
           {episodes
             ? episodes + " Episodes"
-            : (release.getMonth() < 10
+            : (release.getDate() < 10
+                ? "0" + release.getDate()
+                : release.getDate()) +
+              "-" +
+              (release.getMonth() < 10
                 ? "0" + release.getMonth()
                 : release.getMonth()) +
               "-" +

@@ -1,6 +1,6 @@
 import { pagesDataType } from "@/data/common-data";
 import { AnimatePresence, motion } from "motion/react";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 
 export default function Select({
@@ -15,10 +15,6 @@ export default function Select({
   currentPage: pagesDataType;
 }) {
   const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    setSortMethod("Default");
-  }, []);
 
   return (
     <div className="relative h-full">
@@ -35,11 +31,12 @@ export default function Select({
       <AnimatePresence>
         {open && (
           <motion.div
-            className="dropdown absolute top-full left-0 flex w-full translate-y-2 flex-col items-start gap-px overflow-hidden rounded-sm"
+            className="dropdown absolute top-full left-0 z-50 flex w-full translate-y-2 flex-col items-start gap-px overflow-hidden rounded-sm"
             initial={{ y: -20, scale: 0.9, opacity: 0 }}
             animate={{ y: 0, scale: 1, opacity: 1 }}
             exit={{ y: -10, scale: 0.9, opacity: 0 }}
             transition={{ duration: 0.2 }}
+            style={{ background: currentPage.bg }}
           >
             {sortTypes.map((method) => (
               <button

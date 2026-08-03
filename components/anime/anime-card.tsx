@@ -3,7 +3,6 @@ import Image, { StaticImageData } from "next/image";
 import Badge from "../ui/badge";
 import { FaEye, FaStar } from "react-icons/fa";
 import Tooltip from "../ui/tooltip";
-import { useRouter } from "next/navigation";
 import { MdInfo } from "react-icons/md";
 
 export default function AnimeCard({
@@ -25,29 +24,8 @@ export default function AnimeCard({
   status: "Ongoing" | "Finished";
   currentPage: pagesDataType;
 }) {
-  const router = useRouter();
-
   return (
-    <div
-      key={id}
-      tabIndex={0}
-      onClick={(e) => {
-        if (e.button === 1) {
-          window.open(`anime/${id}`);
-          return;
-        }
-
-        if (e.ctrlKey) {
-          window.open(`anime/${id}`);
-          return;
-        }
-        router.push(`anime/${id}`);
-      }}
-      onKeyDown={(e) => {
-        e.key === "Enter" && router.push(`anime/${id}`);
-      }}
-      className="group flex cursor-pointer flex-col self-start rounded-md"
-    >
+    <div key={id} className="group flex flex-col self-start rounded-md">
       <div className="relative overflow-hidden rounded-t-md">
         <Image
           src={coverImage}

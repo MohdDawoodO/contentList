@@ -9,11 +9,8 @@ export default function Badge({
 }) {
   return (
     <div
-      className={
-        "cursor-default rounded-md text-xs sm:text-sm" + " " + className
-      }
+      className={"rounded-md text-xs sm:text-sm" + " " + className}
       style={{ background: backgroundColor }}
-      onClick={(e) => e.stopPropagation()}
     >
       {children}
     </div>

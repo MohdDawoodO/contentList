@@ -14,7 +14,7 @@ type dataType = {
 }[];
 
 export type movieSortMethodType =
-  "Default" | "(a-z)" | "Release" | "Episodes" | "Rating";
+  "Default" | "(a-z)" | "Latest" | "Oldest" | "Episodes";
 
 export function movieSorter(
   data: dataType,
@@ -38,17 +38,23 @@ export function movieSorter(
     case "(a-z)":
       return filteredData.sort((a, b) => a.name.localeCompare(b.name));
 
-    case "Rating":
-      return filteredData.sort((a, b) => b.rating - a.rating);
-
-    case "Release":
+    case "Latest":
       return filteredData.sort(
         (a, b) => b.release.getTime() - a.release.getTime(),
       );
+    case "Oldest":
+      return filteredData.sort(
+        (a, b) => a.release.getTime() - b.release.getTime(),
+      );
     case "Episodes":
-      return filteredData.sort((a, b) => {
+      const series = filteredData.filter((a) => a.type === "series");
+      const movies = filteredData.filter((a) => a.type === "movie");
+
+      const sortedSeries = series.sort((a, b) => {
         if (a.episodes && b.episodes) return a.episodes - b.episodes;
         return 2 - 1;
       });
+
+      return [...sortedSeries, ...movies];
   }
 }

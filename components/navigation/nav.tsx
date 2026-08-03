@@ -35,15 +35,15 @@ export default function Nav() {
   const gameSortTypes: gameSortMethodType[] = [
     "Default",
     "(a-z)",
-    "Release",
-    "Rating",
+    "Latest",
+    "Oldest",
   ];
   const movieSortTypes: movieSortMethodType[] = [
     "Default",
     "(a-z)",
     "Episodes",
-    "Release",
-    "Rating",
+    "Latest",
+    "Oldest",
   ];
 
   useEffect(() => {
@@ -61,7 +61,7 @@ export default function Nav() {
 
   if (pathname === "/") return;
 
-  const currentPage = pages.filter((a) => pathname.includes(a.path))[0];
+  const currentPage = pages.filter((a) => pathname === a.path)[0];
 
   if (!currentPage) return null;
 
@@ -102,55 +102,52 @@ export default function Nav() {
               List
             </h1>
           </Link>
-          {(pathname === "/anime" ||
-            pathname === "/games" ||
-            pathname === "/movies") && (
-            <div className="mx-4 flex w-full max-w-2xl px-4 text-sm sm:text-lg">
-              <input
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                type="text"
-                placeholder={
-                  "Type name of" +
-                  " " +
-                  (currentPage.title === "Anime" ? "an" : "a") +
-                  " " +
-                  currentPage.title.toLowerCase()
-                }
-                className="p-x2 inline-block w-full rounded-l-sm bg-white p-2 font-semibold transition-all duration-200 focus:outline-4 sm:p-2 sm:px-4"
-                style={{
-                  color: currentPage.accent,
-                  background: currentPage.bg + "75",
-                  border: "2px solid " + currentPage.accent,
-                  outlineColor: currentPage.accent + "50",
-                }}
-              />
-              <Select
-                state={
-                  pathname === "/anime"
-                    ? animeSortMethod
-                    : pathname === "/games"
-                      ? gameSortMethod
-                      : movieSortMethod
-                }
-                setState={
-                  pathname === "/anime"
-                    ? setAnimeSortMethod
-                    : pathname === "/games"
-                      ? setGameSortMethod
-                      : setMovieSortMethod
-                }
-                sortTypes={
-                  pathname === "/anime"
-                    ? animeSortTypes
-                    : pathname === "/games"
-                      ? gameSortTypes
-                      : movieSortTypes
-                }
-                currentPage={currentPage}
-              />
-            </div>
-          )}
+
+          <div className="mx-4 flex w-full max-w-2xl px-4 text-sm sm:text-lg">
+            <input
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              type="text"
+              placeholder={
+                "Type name of" +
+                " " +
+                (currentPage.title === "Anime" ? "an" : "a") +
+                " " +
+                currentPage.title.toLowerCase()
+              }
+              className="p-x2 inline-block w-full rounded-l-sm bg-white p-2 font-semibold transition-all duration-200 focus:outline-4 sm:p-2 sm:px-4"
+              style={{
+                color: currentPage.accent,
+                background: currentPage.bg + "75",
+                border: "2px solid " + currentPage.accent,
+                outlineColor: currentPage.accent + "50",
+              }}
+            />
+            <Select
+              state={
+                pathname === "/anime"
+                  ? animeSortMethod
+                  : pathname === "/games"
+                    ? gameSortMethod
+                    : movieSortMethod
+              }
+              setState={
+                pathname === "/anime"
+                  ? setAnimeSortMethod
+                  : pathname === "/games"
+                    ? setGameSortMethod
+                    : setMovieSortMethod
+              }
+              sortTypes={
+                pathname === "/anime"
+                  ? animeSortTypes
+                  : pathname === "/games"
+                    ? gameSortTypes
+                    : movieSortTypes
+              }
+              currentPage={currentPage}
+            />
+          </div>
         </div>
       </nav>
       <PopupNav currentPage={currentPage} pathname={pathname} search={search} />

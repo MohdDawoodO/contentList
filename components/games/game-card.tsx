@@ -3,7 +3,6 @@ import Image, { StaticImageData } from "next/image";
 import Badge from "../ui/badge";
 import { FaStar } from "react-icons/fa";
 import Tooltip from "../ui/tooltip";
-import { useRouter } from "next/navigation";
 import { IoGameController } from "react-icons/io5";
 
 export default function GameCard({
@@ -23,29 +22,8 @@ export default function GameCard({
   played: boolean;
   currentPage: pagesDataType;
 }) {
-  const router = useRouter();
-
   return (
-    <div
-      key={id}
-      tabIndex={0}
-      onClick={(e) => {
-        if (e.button === 1) {
-          window.open(`games/${id}`);
-          return;
-        }
-
-        if (e.ctrlKey) {
-          window.open(`games/${id}`);
-          return;
-        }
-        router.push(`games/${id}`);
-      }}
-      onKeyDown={(e) => {
-        e.key === "Enter" && router.push(`games/${id}`);
-      }}
-      className="group flex cursor-pointer flex-col self-start rounded-md"
-    >
+    <div key={id} className="group flex flex-col self-start rounded-md">
       <div className="relative overflow-hidden rounded-t-md">
         <Image
           src={coverImage}
@@ -65,9 +43,13 @@ export default function GameCard({
           backgroundColor={currentPage.secondary + "bf"}
           className="absolute right-1 bottom-1 p-1 px-3 backdrop-blur-xs"
         >
-          {(release.getMonth() < 10
-            ? "0" + release.getMonth()
-            : release.getMonth()) +
+          {(release.getDate() < 10
+            ? "0" + release.getDate()
+            : release.getDate()) +
+            "-" +
+            (release.getMonth() < 10
+              ? "0" + release.getMonth()
+              : release.getMonth()) +
             "-" +
             release.getFullYear()}
         </Badge>

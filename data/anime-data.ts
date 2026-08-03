@@ -42,7 +42,6 @@ export const animeData: {
   coverImage: StaticImageData;
   watched: boolean;
   status: "Ongoing" | "Finished";
-  trailer: string;
 }[] = [
   {
     id: 1,
@@ -52,7 +51,6 @@ export const animeData: {
     coverImage: deathNote,
     watched: true,
     status: "Finished",
-    trailer: "https://youtube.com/",
   },
   {
     id: 2,
@@ -62,7 +60,6 @@ export const animeData: {
     coverImage: bleach,
     watched: true,
     status: "Ongoing",
-    trailer: "https://youtube.com/",
   },
   {
     id: 3,
@@ -72,7 +69,6 @@ export const animeData: {
     coverImage: naruto,
     watched: true,
     status: "Finished",
-    trailer: "https://youtube.com/",
   },
   {
     id: 4,
@@ -82,7 +78,6 @@ export const animeData: {
     coverImage: jujutsuKaisen,
     watched: true,
     status: "Ongoing",
-    trailer: "https://youtube.com/",
   },
   {
     id: 5,
@@ -92,7 +87,6 @@ export const animeData: {
     coverImage: demonSlayer,
     watched: true,
     status: "Ongoing",
-    trailer: "https://youtube.com/",
   },
   {
     id: 6,
@@ -102,7 +96,6 @@ export const animeData: {
     coverImage: soloLeveling,
     watched: true,
     status: "Ongoing",
-    trailer: "https://youtube.com/",
   },
   {
     id: 7,
@@ -112,7 +105,6 @@ export const animeData: {
     coverImage: attackOnTitan,
     watched: true,
     status: "Finished",
-    trailer: "https://youtube.com/",
   },
   {
     id: 8,
@@ -122,7 +114,6 @@ export const animeData: {
     coverImage: dororo,
     watched: false,
     status: "Finished",
-    trailer: "https://youtube.com/",
   },
   {
     id: 9,
@@ -132,7 +123,6 @@ export const animeData: {
     coverImage: mashle,
     watched: true,
     status: "Ongoing",
-    trailer: "https://youtube.com/",
   },
   {
     id: 10,
@@ -142,7 +132,6 @@ export const animeData: {
     coverImage: tokyoGhoul,
     watched: false,
     status: "Finished",
-    trailer: "https://youtube.com/",
   },
   {
     id: 11,
@@ -152,7 +141,6 @@ export const animeData: {
     coverImage: onimusha,
     watched: true,
     status: "Finished",
-    trailer: "https://youtube.com/",
   },
   {
     id: 12,
@@ -162,7 +150,6 @@ export const animeData: {
     coverImage: onePunchMan,
     watched: false,
     status: "Ongoing",
-    trailer: "https://youtube.com/",
   },
   {
     id: 13,
@@ -172,7 +159,6 @@ export const animeData: {
     coverImage: drStone,
     watched: false,
     status: "Finished",
-    trailer: "https://youtube.com/",
   },
   {
     id: 14,
@@ -182,7 +168,6 @@ export const animeData: {
     coverImage: promisedNeverland,
     watched: true,
     status: "Finished",
-    trailer: "https://youtube.com/",
   },
   {
     id: 15,
@@ -192,7 +177,6 @@ export const animeData: {
     coverImage: vinlandSaga,
     watched: true,
     status: "Ongoing",
-    trailer: "https://youtube.com/",
   },
   {
     id: 16,
@@ -202,7 +186,6 @@ export const animeData: {
     coverImage: spyXFamily,
     watched: true,
     status: "Ongoing",
-    trailer: "https://youtube.com/",
   },
   {
     id: 17,
@@ -212,7 +195,6 @@ export const animeData: {
     coverImage: blueLock,
     watched: false,
     status: "Ongoing",
-    trailer: "https://youtube.com/",
   },
   {
     id: 18,
@@ -222,7 +204,6 @@ export const animeData: {
     coverImage: monster,
     watched: false,
     status: "Finished",
-    trailer: "https://youtube.com/",
   },
   {
     id: 19,
@@ -232,7 +213,6 @@ export const animeData: {
     coverImage: madeInAbyss,
     watched: false,
     status: "Ongoing",
-    trailer: "https://youtube.com/",
   },
   {
     id: 20,
@@ -242,7 +222,6 @@ export const animeData: {
     coverImage: uzumaki,
     watched: false,
     status: "Finished",
-    trailer: "https://youtube.com/",
   },
   {
     id: 21,
@@ -252,7 +231,6 @@ export const animeData: {
     coverImage: beyblade,
     watched: false,
     status: "Ongoing",
-    trailer: "https://youtube.com/",
   },
   {
     id: 22,
@@ -262,7 +240,6 @@ export const animeData: {
     coverImage: moriartyThePatriot,
     watched: false,
     status: "Ongoing",
-    trailer: "https://youtube.com/",
   },
   {
     id: 23,
@@ -272,7 +249,6 @@ export const animeData: {
     coverImage: towerOfGod,
     watched: false,
     status: "Ongoing",
-    trailer: "https://youtube.com/",
   },
   {
     id: 24,
@@ -282,7 +258,6 @@ export const animeData: {
     coverImage: summertimeRendering,
     watched: false,
     status: "Finished",
-    trailer: "https://youtube.com/",
   },
   {
     id: 25,
@@ -292,7 +267,6 @@ export const animeData: {
     coverImage: starWars,
     watched: false,
     status: "Ongoing",
-    trailer: "https://youtube.com/",
   },
   {
     id: 26,
@@ -302,7 +276,6 @@ export const animeData: {
     coverImage: hunterXHunter,
     watched: false,
     status: "Ongoing",
-    trailer: "https://youtube.com/",
   },
   {
     id: 27,
@@ -312,7 +285,6 @@ export const animeData: {
     coverImage: azumanga,
     watched: false,
     status: "Finished",
-    trailer: "https://youtube.com/",
   },
   {
     id: 28,
@@ -322,7 +294,6 @@ export const animeData: {
     coverImage: yourLieInApril,
     watched: false,
     status: "Finished",
-    trailer: "https://youtube.com/",
   },
   {
     id: 29,
@@ -332,7 +303,6 @@ export const animeData: {
     coverImage: kaijuNo8,
     watched: true,
     status: "Ongoing",
-    trailer: "https://youtube.com/",
   },
   {
     id: 30,
@@ -342,7 +312,6 @@ export const animeData: {
     coverImage: codeGeass,
     watched: false,
     status: "Finished",
-    trailer: "https://youtube.com/",
   },
   {
     id: 31,
@@ -352,7 +321,6 @@ export const animeData: {
     coverImage: gintama,
     watched: false,
     status: "Finished",
-    trailer: "https://youtube.com/",
   },
   {
     id: 32,
@@ -362,7 +330,6 @@ export const animeData: {
     coverImage: steinsGate,
     watched: false,
     status: "Finished",
-    trailer: "https://youtube.com/",
   },
   {
     id: 33,
@@ -372,6 +339,5 @@ export const animeData: {
     coverImage: fullmetalAlchemist,
     watched: true,
     status: "Finished",
-    trailer: "https://youtube.com/",
   },
 ];
