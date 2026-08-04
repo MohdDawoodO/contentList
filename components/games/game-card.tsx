@@ -1,29 +1,21 @@
-import { pagesDataType } from "@/data/common-data";
-import Image, { StaticImageData } from "next/image";
+import { gameDataType, pagesDataType } from "@/data/common-data";
+import Image from "next/image";
 import Badge from "../ui/badge";
 import { FaStar } from "react-icons/fa";
 import Tooltip from "../ui/tooltip";
 import { IoGameController } from "react-icons/io5";
 
 export default function GameCard({
-  id,
   name,
   rating,
   coverImage,
   played,
   release,
+  genre,
   currentPage,
-}: {
-  id: number;
-  name: string;
-  rating: number;
-  release: Date;
-  coverImage: StaticImageData;
-  played: boolean;
-  currentPage: pagesDataType;
-}) {
+}: gameDataType & { currentPage: pagesDataType }) {
   return (
-    <div key={id} className="group flex flex-col self-start rounded-md">
+    <div className="group flex flex-col self-start rounded-md">
       <div className="relative overflow-hidden rounded-t-md">
         <Image
           src={coverImage}
@@ -65,10 +57,13 @@ export default function GameCard({
         )}
       </div>
       <div
-        className="z-1 h-full rounded-b-md p-2 py-3"
+        className="z-1 flex h-full flex-col gap-px rounded-b-md p-2 py-3"
         style={{ background: currentPage.secondary }}
       >
         <h2 className="text-sm font-semibold">{name}</h2>
+        <h2 className="text-xs font-semibold opacity-80">
+          {genre[0] + " " + (genre[1] ? "/ " + genre[1] : "")}
+        </h2>
       </div>
     </div>
   );

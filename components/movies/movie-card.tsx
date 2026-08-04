@@ -1,12 +1,11 @@
-import { pagesDataType } from "@/data/common-data";
-import Image, { StaticImageData } from "next/image";
+import { movieDataType, pagesDataType } from "@/data/common-data";
+import Image from "next/image";
 import Badge from "../ui/badge";
 import { FaEye, FaStar } from "react-icons/fa";
 import Tooltip from "../ui/tooltip";
 import { MdInfo } from "react-icons/md";
 
 export default function MovieCard({
-  id,
   name,
   release,
   episodes,
@@ -14,24 +13,11 @@ export default function MovieCard({
   watched,
   coverImage,
   status,
+  genre,
   currentPage,
-}: {
-  id: number;
-  name: string;
-  episodes?: number;
-  release: Date;
-  rating: number;
-  watched: boolean;
-  coverImage: StaticImageData;
-  status?: "Ongoing" | "Finished";
-  type: "movie" | "series";
-  currentPage: pagesDataType;
-}) {
+}: movieDataType & { currentPage: pagesDataType }) {
   return (
-    <div
-      key={id}
-      className="group relative flex h-full flex-col self-start rounded-md"
-    >
+    <div className="group relative flex h-full flex-col self-start rounded-md">
       <div className="relative min-h-fit overflow-hidden rounded-t-md">
         <Image
           src={coverImage}
@@ -87,10 +73,13 @@ export default function MovieCard({
         )}
       </div>
       <div
-        className="z-1 h-full rounded-b-md p-2 py-3"
+        className="z-1 flex h-full flex-col gap-px rounded-b-md p-2 py-3"
         style={{ background: currentPage.secondary }}
       >
         <h2 className="text-sm font-semibold">{name}</h2>
+        <h2 className="text-xs font-semibold opacity-80">
+          {genre[0] + " " + (genre[1] ? "/ " + genre[1] : "")}
+        </h2>
       </div>
     </div>
   );

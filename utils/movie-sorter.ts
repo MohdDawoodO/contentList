@@ -1,59 +1,29 @@
-import { StaticImageData } from "next/image";
-
-type dataType = {
-  id: number;
-  name: string;
-  rating: number;
-  episodes?: number;
-  status?: "Ongoing" | "Finished";
-  release: Date;
-  coverImage: StaticImageData;
-  watched: boolean;
-  type: "movie" | "series";
-}[];
-
-export type movieSortMethodType =
-  "Default" | "(a-z)" | "Latest" | "Oldest" | "Episodes";
+import { movieDataType, movieSortMethodType } from "@/data/common-data";
 
 export function movieSorter(
-  data: dataType,
+  data: movieDataType[],
   method: movieSortMethodType,
   searchInput: string,
+  reverse: boolean,
 ) {
   const filteredData = data.filter((a) =>
     a.name.toLowerCase().includes(searchInput.toLowerCase()),
   );
 
-  switch (method) {
-    case "Default":
-      return filteredData.sort((a, b) => {
-        if (a.rating === b.rating) {
-          a.release.getTime() - b.release.getTime();
-        }
+  const sortedData = filteredData.sort((a, b) => {
+    switch (method) {
+      case "Date":
+        return b.release.getTime() - a.release.getTime();
 
-        return b.rating - a.rating;
-      });
+      case "Alphabets":
+        return a.name.localeCompare(b.name);
 
-    case "(a-z)":
-      return filteredData.sort((a, b) => a.name.localeCompare(b.name));
-
-    case "Latest":
-      return filteredData.sort(
-        (a, b) => b.release.getTime() - a.release.getTime(),
-      );
-    case "Oldest":
-      return filteredData.sort(
-        (a, b) => a.release.getTime() - b.release.getTime(),
-      );
-    case "Episodes":
-      const series = filteredData.filter((a) => a.type === "series");
-      const movies = filteredData.filter((a) => a.type === "movie");
-
-      const sortedSeries = series.sort((a, b) => {
+      case "Episodes":
         if (a.episodes && b.episodes) return a.episodes - b.episodes;
-        return 2 - 1;
-      });
+    }
+    return b.rating - a.rating;
+  });
 
-      return [...sortedSeries, ...movies];
-  }
+  if (reverse) return sortedData.reverse();
+  return sortedData;
 }

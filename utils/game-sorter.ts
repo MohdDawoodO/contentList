@@ -1,45 +1,31 @@
-import { StaticImageData } from "next/image";
-
-type dataType = {
-  id: number;
-  name: string;
-  rating: number;
-  release: Date;
-  coverImage: StaticImageData;
-  played: boolean;
-}[];
-
-export type gameSortMethodType = "Default" | "(a-z)" | "Latest" | "Oldest";
+import { gameDataType, gameSortMethodType } from "@/data/common-data";
 
 export function gameSorter(
-  data: dataType,
+  data: gameDataType[],
   method: gameSortMethodType,
   searchInput: string,
+  reverse: boolean,
 ) {
   const filteredData = data.filter((a) =>
     a.name.toLowerCase().includes(searchInput.toLowerCase()),
   );
 
-  switch (method) {
-    case "Default":
-      return filteredData.sort((a, b) => {
+  const sortedData = filteredData.sort((a, b) => {
+    switch (method) {
+      case "Rating":
         if (a.rating === b.rating) {
-          a.release.getTime() - b.release.getTime();
+          return a.release.getTime() - b.release.getTime();
         }
-
         return b.rating - a.rating;
-      });
 
-    case "(a-z)":
-      return filteredData.sort((a, b) => a.name.localeCompare(b.name));
+      case "Alphabets":
+        return a.name.localeCompare(b.name);
 
-    case "Latest":
-      return filteredData.sort(
-        (a, b) => b.release.getTime() - a.release.getTime(),
-      );
-    case "Oldest":
-      return filteredData.sort(
-        (a, b) => a.release.getTime() - b.release.getTime(),
-      );
-  }
+      case "Date":
+        return b.release.getTime() - a.release.getTime();
+    }
+  });
+
+  if (reverse) return sortedData.reverse();
+  return sortedData;
 }

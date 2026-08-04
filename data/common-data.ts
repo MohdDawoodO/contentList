@@ -13,6 +13,152 @@ export type pagesDataType = {
   image: StaticImageData;
 };
 
+type mediaType = "All" | "Cartoon" | "Series" | "Movie";
+type watchedStatusType = "All" | "Watched" | "Not Watched";
+type playedStatusType = "All" | "Played" | "Not Played";
+
+type mediaGenreType =
+  | "All"
+  | "Action"
+  | "Adventure"
+  | "Comedy"
+  | "Crime"
+  | "Dark Fantasy"
+  | "Family"
+  | "Fantasy"
+  | "Horror"
+  | "Murder"
+  | "Mystery"
+  | "Sci-fi"
+  | "Thriller";
+type gameGenreType =
+  | "All"
+  | "Action"
+  | "Dark Fantasy"
+  | "Fantasy"
+  | "FPS"
+  | "Open World"
+  | "Platformer"
+  | "RPG"
+  | "Racing"
+  | "Sandbox"
+  | "Shooter"
+  | "Survival";
+
+export type movieFiltersType = {
+  watchedStatus: watchedStatusType;
+  type: mediaType;
+  genre: mediaGenreType;
+};
+export type animeFiltersType = {
+  watchedStatus: watchedStatusType;
+  genre: mediaGenreType;
+};
+export type gameFiltersType = {
+  playedStatus: playedStatusType;
+  genre: gameGenreType;
+};
+
+export type movieSortMethodType = "Rating" | "Alphabets" | "Date" | "Episodes";
+export type gameSortMethodType = "Rating" | "Alphabets" | "Date";
+export type animeSortMethodType =
+  "Default" | "Alphabets" | "Episodes" | "Rating";
+
+export type movieDataType = {
+  name: string;
+  rating: number;
+  episodes?: number;
+  status?: "Ongoing" | "Finished";
+  release: Date;
+  coverImage: StaticImageData;
+  watched: boolean;
+  type: "Movie" | "Series" | "Cartoon";
+  genre: mediaGenreType[];
+};
+export type gameDataType = {
+  name: string;
+  rating: number;
+  release: Date;
+  coverImage: StaticImageData;
+  played: boolean;
+  genre: gameGenreType[];
+};
+export type animeDataType = {
+  name: string;
+  episodes: number;
+  rating: number;
+  coverImage: StaticImageData;
+  watched: boolean;
+  status: "Ongoing" | "Finished";
+  genre: mediaGenreType[];
+};
+
+export const animeSortMethods: animeSortMethodType[] = [
+  "Default",
+  "Alphabets",
+  "Rating",
+  "Episodes",
+];
+export const gameSortMethods: gameSortMethodType[] = [
+  "Rating",
+  "Alphabets",
+  "Date",
+];
+export const movieSortMethods: movieSortMethodType[] = [
+  "Rating",
+  "Alphabets",
+  "Date",
+];
+
+export const watchedStatusFilter: watchedStatusType[] = [
+  "All",
+  "Watched",
+  "Not Watched",
+];
+
+export const playedStatusFilter: playedStatusType[] = [
+  "All",
+  "Played",
+  "Not Played",
+];
+
+export const movieTypeFilter: mediaType[] = [
+  "All",
+  "Movie",
+  "Cartoon",
+  "Series",
+];
+
+export const mediaGenreFilter: mediaGenreType[] = [
+  "All",
+  "Action",
+  "Adventure",
+  "Comedy",
+  "Crime",
+  "Dark Fantasy",
+  "Family",
+  "Fantasy",
+  "Horror",
+  "Murder",
+  "Mystery",
+  "Sci-fi",
+  "Thriller",
+];
+export const gameGenreFilter: gameGenreType[] = [
+  "All",
+  "Action",
+  "Dark Fantasy",
+  "Fantasy",
+  "FPS",
+  "Open World",
+  "Platformer",
+  "RPG",
+  "Racing",
+  "Sandbox",
+  "Shooter",
+  "Survival",
+];
+
 export const pages = [
   {
     title: "Game",

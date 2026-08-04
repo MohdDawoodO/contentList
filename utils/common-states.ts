@@ -1,9 +1,38 @@
+import {
+  animeFiltersType,
+  animeSortMethodType,
+  gameFiltersType,
+  gameSortMethodType,
+  movieFiltersType,
+  movieSortMethodType,
+} from "@/data/common-data";
 import { atom } from "jotai";
-import { animeSortMethodType } from "./anime-sorter";
-import { gameSortMethodType } from "./game-sorter";
-import { movieSortMethodType } from "./movie-sorter";
 
-export const animeSortMethodState = atom<animeSortMethodType>("Default");
-export const gameSortMethodState = atom<gameSortMethodType>("Default");
-export const movieSortMethodState = atom<movieSortMethodType>("Default");
+export const animeSortMethodState = atom<{
+  method: animeSortMethodType;
+  reverse: boolean;
+}>({ method: "Default", reverse: false });
+export const gameSortMethodState = atom<{
+  method: gameSortMethodType;
+  reverse: boolean;
+}>({ method: "Rating", reverse: false });
+export const movieSortMethodState = atom<{
+  method: movieSortMethodType;
+  reverse: boolean;
+}>({ method: "Rating", reverse: false });
+
 export const searchState = atom("");
+
+export const animeFiltersState = atom<animeFiltersType>({
+  watchedStatus: "All",
+  genre: "All",
+});
+export const gameFiltersState = atom<gameFiltersType>({
+  playedStatus: "All",
+  genre: "All",
+});
+export const movieFiltersState = atom<movieFiltersType>({
+  watchedStatus: "All",
+  type: "All",
+  genre: "All",
+});

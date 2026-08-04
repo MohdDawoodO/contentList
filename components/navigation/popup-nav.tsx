@@ -8,12 +8,14 @@ type popupNavTypes = {
   currentPage: pagesDataType;
   pathname: string;
   search: string;
+  filters: boolean;
 };
 
 export default function PopupNav({
   currentPage,
   pathname,
   search,
+  filters,
 }: popupNavTypes) {
   const [scroll, setScroll] = useState(0);
   const [windowHeight, setWindowHeight] = useState(0);
@@ -44,15 +46,15 @@ export default function PopupNav({
 
   return (
     <AnimatePresence>
-      {scroll + windowHeight > scrollHeight * 0.99 && (
+      {(!!(filters || search)
+        ? scroll + windowHeight > scrollHeight * 0.99
+        : scroll >= 100) && (
         <MotionLink
           href={nextList.path}
-          className="fixed bottom-6 left-1/2 z-50 w-fit -translate-x-1/2 rounded-full bg-[rgba(0,0,0,0.25)] p-2 px-4 text-center text-sm backdrop-blur-sm duration-100 focus:outline-4 sm:text-lg"
-
+          className="fixed bottom-6 left-1/2 z-50 w-fit -translate-x-1/2 rounded-full bg-[rgba(0,0,0,0.25)] p-2 px-4 text-center text-sm backdrop-blur-sm duration-200 hover:-translate-y-1 focus:outline-4 sm:text-lg"
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
-
           style={{
             border: "2px solid " + nextList.accent,
             outlineColor: nextList.accent + "50",
