@@ -28,55 +28,45 @@ export default function Home() {
   return (
     <main className="flex min-h-dvh items-center justify-center px-4 sm:px-8">
       <AnimatePresence mode="wait">
-        {pages.map((page, i) => {
-          if (currentID !== i) return;
-          return (
-            <motion.div
-              key={page.title}
-              className="gradient absolute h-full w-full before:absolute before:z-1 before:h-full before:w-full before:backdrop-blur-xs"
-              style={{
-                backgroundImage: `linear-gradient(${page.bg}bf, ${page.bg}fc 80%)`,
-              }}
-            >
-              <MotionImage
-                className="pointer-events-none absolute -z-1 h-full w-full object-cover object-top"
-                src={page.image}
-                alt="background"
-                width={1920}
-                height={1080}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                loading="eager"
-              />
-            </motion.div>
-          );
-        })}
+        <motion.div
+          key={pages[currentID].title}
+          className="gradient absolute h-full w-full before:absolute before:z-1 before:h-full before:w-full before:backdrop-blur-xs"
+          style={{
+            backgroundImage: `linear-gradient(${pages[currentID].bg}bf, ${pages[currentID].bg}fc 80%)`,
+          }}
+        >
+          <MotionImage
+            className="pointer-events-none absolute -z-1 h-full w-full object-cover object-top"
+            src={pages[currentID].image}
+            alt="background"
+            width={1920}
+            height={1080}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            loading="eager"
+          />
+        </motion.div>
       </AnimatePresence>
 
       <div className="z-10 flex max-w-2xl flex-col items-center justify-center gap-8">
         <div className="relative flex overflow-hidden text-2xl font-semibold sm:text-3xl">
           <AnimatePresence mode="popLayout">
-            {pages.map((page, i) => {
-              if (currentID !== i) return;
-              return (
-                <motion.h1
-                  key={page.title}
-                  style={{
-                    color: page.accent,
-                    textShadow: `0px 0px 10px ${page.accent}bf`,
-                  }}
-                  className={`w-24 text-end`}
-                  initial={{ y: "-100%" }}
-                  animate={{ y: 0 }}
-                  exit={{ y: "100%" }}
-                  transition={{ duration: 1 }}
-                >
-                  {page.title}
-                </motion.h1>
-              );
-            })}
+            <motion.h1
+              key={pages[currentID].title}
+              style={{
+                color: pages[currentID].accent,
+                textShadow: `0px 0px 10px ${pages[currentID].accent}bf`,
+              }}
+              className={`w-24 text-end`}
+              initial={{ y: "-100%" }}
+              animate={{ y: 0 }}
+              exit={{ y: "100%" }}
+              transition={{ duration: 1 }}
+            >
+              {pages[currentID].title}
+            </motion.h1>
           </AnimatePresence>
 
           <h1>List</h1>

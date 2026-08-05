@@ -26,7 +26,7 @@ export default function Filters({
     <div className="relative z-20 w-fit">
       <button
         onClick={() => setOpen(!open)}
-        className="flex h-full cursor-pointer items-center justify-between rounded-sm p-2 duration-200 hover:opacity-80 focus:outline-4 sm:gap-2 sm:p-2 sm:px-4"
+        className="flex h-full cursor-pointer items-center justify-between gap-2 rounded-sm p-2 duration-200 hover:opacity-80 focus:outline-4 sm:p-2 sm:px-4"
         style={{
           background: currentPage.accent,
           outlineColor: currentPage.accent + "50",

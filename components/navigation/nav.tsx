@@ -11,11 +11,9 @@ import {
   playedStatusFilter,
   watchedStatusFilter,
 } from "@/data/common-data";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import useParallax from "../utils/use-parallax";
-import PopupNav from "./popup-nav";
 import Select from "../ui/select";
 import {
   searchState,
@@ -29,6 +27,8 @@ import {
 import { useAtom } from "jotai";
 import Filters from "../ui/filters";
 import { AnimatePresence, motion } from "motion/react";
+import NavLinks from "./nav-links";
+import NavBackground from "./nav-background";
 
 export default function Nav() {
   const pathname = usePathname();
@@ -79,26 +79,10 @@ export default function Nav() {
 
   return (
     <>
-      <nav className="relative min-h-[40vh] lg:min-h-[50vh]">
-        <div
-          key={currentPage.title}
-          className="background absolute h-full w-full before:absolute before:h-full before:w-full before:backdrop-blur-xs"
-          style={{
-            backgroundImage: `linear-gradient(${currentPage.bg}bf, ${currentPage.bg})`,
-          }}
-        >
-          <Image
-            className="pointer-events-none absolute -z-1 h-full w-full object-cover object-top"
-            src={currentPage.image}
-            alt="ss"
-            width={1920}
-            height={1080}
-            loading="eager"
-            data-parallax="-65"
-          />
-        </div>
+      <nav className="relative flex min-h-[40vh] items-end lg:min-h-[50vh]">
+        <NavBackground currentPage={currentPage} />
 
-        <div className="absolute flex h-4/5 w-full flex-col items-center justify-center gap-4 sm:gap-8">
+        <div className="relative flex w-full flex-col items-center justify-center gap-4 pt-8 pb-4 sm:gap-8 sm:pt-12 lg:pb-8">
           <div>
             <h1 className="text-2xl font-semibold sm:text-3xl">
               <span
@@ -115,7 +99,7 @@ export default function Nav() {
             </h1>
           </div>
 
-          <div className="mx-4 flex w-full max-w-2xl flex-col gap-4 px-4 text-sm sm:text-lg">
+          <div className="flex w-full max-w-2xl flex-col gap-4 px-4 text-sm sm:text-lg lg:px-0">
             <input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
@@ -136,7 +120,7 @@ export default function Nav() {
               }}
             />
             <div className="flex justify-between">
-              <div className="flex items-center gap-2">
+              <div className="flex items-center">
                 <Filters
                   open={open}
                   setOpen={setOpen}
@@ -169,37 +153,36 @@ export default function Nav() {
                 />
               </div>
 
-              <div className="flex items-center gap-2">
-                <p className="hidden sm:block">Sort By:</p>
-                <Select
-                  state={
-                    pathname === "/anime"
-                      ? animeSortMethod
-                      : pathname === "/games"
-                        ? gameSortMethod
-                        : movieSortMethod
-                  }
-                  setState={
-                    pathname === "/anime"
-                      ? setAnimeSortMethod
-                      : pathname === "/games"
-                        ? setGameSortMethod
-                        : setMovieSortMethod
-                  }
-                  items={
-                    pathname === "/anime"
-                      ? animeSortMethods
-                      : pathname === "/games"
-                        ? gameSortMethods
-                        : movieSortMethodsHandler()
-                  }
-                  currentPage={currentPage}
-                />
-              </div>
+              <Select
+                state={
+                  pathname === "/anime"
+                    ? animeSortMethod
+                    : pathname === "/games"
+                      ? gameSortMethod
+                      : movieSortMethod
+                }
+                setState={
+                  pathname === "/anime"
+                    ? setAnimeSortMethod
+                    : pathname === "/games"
+                      ? setGameSortMethod
+                      : setMovieSortMethod
+                }
+                items={
+                  pathname === "/anime"
+                    ? animeSortMethods
+                    : pathname === "/games"
+                      ? gameSortMethods
+                      : movieSortMethodsHandler()
+                }
+                currentPage={currentPage}
+              />
             </div>
+            <NavLinks currentPage={currentPage} />
           </div>
         </div>
       </nav>
+
       <AnimatePresence>
         {open && (
           <motion.div
@@ -211,20 +194,6 @@ export default function Nav() {
           />
         )}
       </AnimatePresence>
-      <PopupNav
-        currentPage={currentPage}
-        pathname={pathname}
-        search={search}
-        filters={
-          animeFilters.genre !== "All" ||
-          animeFilters.watchedStatus !== "All" ||
-          gameFilters.genre !== "All" ||
-          gameFilters.playedStatus !== "All" ||
-          movieFilters.genre !== "All" ||
-          movieFilters.watchedStatus !== "All" ||
-          movieFilters.type !== "All"
-        }
-      />
     </>
   );
 }

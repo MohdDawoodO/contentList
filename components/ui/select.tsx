@@ -19,11 +19,12 @@ export default function Select({
   const [open, setOpen] = useState(false);
 
   return (
-    <>
+    <div className="flex items-center gap-2">
+      <p className="hidden min-w-fit sm:block">Sort By:</p>
       <div className="relative w-fit">
         <button
           onClick={() => setOpen(!open)}
-          className="flex h-full w-22 cursor-pointer items-center justify-between rounded-sm p-2 duration-200 hover:opacity-80 focus:outline-4 sm:w-32 sm:gap-2 sm:p-2 sm:px-4"
+          className="flex h-full w-24 cursor-pointer items-center justify-between rounded-sm p-2 duration-200 hover:opacity-80 focus:outline-4 sm:w-32 sm:gap-2 sm:p-2 sm:px-4"
           style={{
             background: currentPage.accent,
             outlineColor: currentPage.accent + "50",
@@ -60,8 +61,9 @@ export default function Select({
           )}
         </AnimatePresence>
       </div>
+
       <button
-        className="flex aspect-square h-full cursor-pointer items-center justify-center rounded-sm duration-200 hover:opacity-80 focus:outline-4"
+        className="flex h-full cursor-pointer items-center justify-center rounded-sm p-2 duration-200 hover:opacity-80 focus:outline-4 sm:aspect-square sm:p-3"
         style={{
           background: currentPage.accent,
           outlineColor: currentPage.accent + "50",
@@ -74,6 +76,6 @@ export default function Select({
           <TbSortAscending size={20} />
         )}
       </button>
-    </>
+    </div>
   );
 }
