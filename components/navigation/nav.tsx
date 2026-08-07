@@ -58,9 +58,9 @@ export default function Nav() {
     const controller = useParallax();
     scrollTo(0, 0);
     setSearch("");
-    setAnimeSortMethod({ ...animeSortMethod, method: "Default" });
-    setGameSortMethod({ ...gameSortMethod, method: "Rating" });
-    setMovieSortMethod({ ...movieSortMethod, method: "Rating" });
+    setAnimeSortMethod({ method: "Default", reverse: false });
+    setGameSortMethod({ method: "Rating", reverse: false });
+    setMovieSortMethod({ method: "Rating", reverse: false });
 
     setAnimeFilters({ genre: "All", watchedStatus: "All" });
     setGameFilters({ genre: "All", playedStatus: "All" });

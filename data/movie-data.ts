@@ -96,6 +96,21 @@ import minions from "@/assets/images/movies/minions.jpg";
 import despicableMe from "@/assets/images/movies/despicable-me.jpg";
 import despicableMe2 from "@/assets/images/movies/despicable-me-2.jpg";
 import despicableMe3 from "@/assets/images/movies/despicable-me-3.jpg";
+import theCroods from "@/assets/images/movies/the-croods.png";
+import theCroods2 from "@/assets/images/movies/the-croods-2.jpg";
+import spiritedAway from "@/assets/images/movies/spirited-away.jpg";
+import spongeBob from "@/assets/images/movies/sponge-bob.jpg";
+import spongeBob2 from "@/assets/images/movies/sponge-bob-2.jpg";
+import shutterIsland from "@/assets/images/movies/shutter-island.jpg";
+import mitchellsVsTheMachines from "@/assets/images/movies/mitchells-vs-the-machines.jpg";
+import aliceInBorderland from "@/assets/images/movies/alice-in-borderland.jpg";
+import squidGame from "@/assets/images/movies/squid-game.jpg";
+import hawkeye from "@/assets/images/movies/hawkeye.jpg";
+import rango from "@/assets/images/movies/rango.jpg";
+import paddington2 from "@/assets/images/movies/paddington-2.jpg";
+import paddington from "@/assets/images/movies/paddington.jpg";
+import teenTitansGo from "@/assets/images/movies/teen-titans-go.jpg";
+import teenTitansGo2 from "@/assets/images/movies/teen-titans-go-2.png";
 import { movieDataType } from "./common-data";
 
 export const movieData: movieDataType[] = [
@@ -1005,5 +1020,148 @@ export const movieData: movieDataType[] = [
     watched: true,
     type: "Cartoon",
     genre: ["Action", "Comedy", "Fantasy", "Family", "Sci-fi"],
+  },
+
+  //* new entries
+  {
+    name: "The Croods",
+    release: new Date("2013-03-22"),
+    rating: 7.1,
+    coverImage: theCroods,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Adventure", "Comedy", "Fantasy", "Family"],
+  },
+  {
+    name: "The Croods: A New Age",
+    release: new Date("2020-11-25"),
+    rating: 6.9,
+    coverImage: theCroods2,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Adventure", "Comedy", "Fantasy", "Family"],
+  },
+  {
+    name: "Spirited Away",
+    release: new Date("2001-07-20"),
+    rating: 8.6,
+    coverImage: spiritedAway,
+    watched: false,
+    type: "Cartoon",
+    genre: ["Adventure", "Fantasy", "Family"],
+  },
+  {
+    name: "SpongeBob: Sponge on the Run",
+    release: new Date("2020-11-05"),
+    rating: 5.9,
+    coverImage: spongeBob,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Adventure", "Comedy", "Fantasy", "Family"],
+  },
+  {
+    name: "SpongeBob: Search for SquarePants",
+    release: new Date("2025-12-19"),
+    rating: 5.7,
+    coverImage: spongeBob2,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Adventure", "Comedy", "Fantasy", "Family"],
+  },
+  {
+    name: "Shutter Island",
+    release: new Date("2010-02-19"),
+    rating: 8.2,
+    coverImage: shutterIsland,
+    watched: true,
+    type: "Movie",
+    genre: ["Murder", "Mystery", "Thriller"],
+  },
+  {
+    name: "Mitchells vs the Machines",
+    release: new Date("2021-04-22"),
+    rating: 7.6,
+    coverImage: mitchellsVsTheMachines,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Adventure", "Comedy", "Sci-fi", "Family"],
+  },
+  {
+    name: "Alice in Borderland",
+    release: new Date("2020-12-10"),
+    rating: 7.8,
+    episodes: 22,
+    status: "Ongoing",
+    coverImage: aliceInBorderland,
+    watched: true,
+    type: "Series",
+    genre: ["Adventure", "Mystery", "Thriller", "Fantasy", "Murder"],
+  },
+  {
+    name: "Hawkeye",
+    release: new Date("2021-11-24"),
+    rating: 7.4,
+    episodes: 6,
+    status: "Finished",
+    coverImage: hawkeye,
+    watched: true,
+    type: "Series",
+    genre: ["Action", "Comedy", "Thriller", "Sci-fi"],
+  },
+  {
+    name: "Squid Game",
+    release: new Date("2021-09-17"),
+    rating: 7.9,
+    episodes: 22,
+    status: "Finished",
+    coverImage: squidGame,
+    watched: true,
+    type: "Series",
+    genre: ["Adventure", "Mystery", "Thriller", "Murder"],
+  },
+  {
+    name: "Teen Titans Go! To The Movies",
+    release: new Date("2018-07-27"),
+    rating: 6.7,
+    coverImage: teenTitansGo,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Action", "Comedy", "Fantasy", "Family"],
+  },
+  {
+    name: "Teen Titans Go! Vs. Teen Ttans",
+    release: new Date("2019-07-21"),
+    rating: 6.8,
+    coverImage: teenTitansGo2,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Action", "Comedy", "Fantasy", "Family"],
+  },
+  {
+    name: "Paddington",
+    release: new Date("2014-11-23"),
+    rating: 7.3,
+    coverImage: paddington,
+    watched: true,
+    type: "Movie",
+    genre: ["Adventure", "Comedy", "Fantasy", "Family"],
+  },
+  {
+    name: "Paddington 2",
+    release: new Date("2017-11-10"),
+    rating: 7.8,
+    coverImage: paddington2,
+    watched: true,
+    type: "Movie",
+    genre: ["Adventure", "Comedy", "Fantasy", "Family"],
+  },
+  {
+    name: "Rango",
+    release: new Date("2011-03-04"),
+    rating: 7.3,
+    coverImage: rango,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Action", "Comedy", "Adventure", "Mystery"],
   },
 ];

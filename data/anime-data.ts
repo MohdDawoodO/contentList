@@ -25,12 +25,12 @@ import summertimeRendering from "@/assets/images/anime/summertime-remdering.jpg"
 import starWars from "@/assets/images/anime/star-wars-visions.jpg";
 import hunterXHunter from "@/assets/images/anime/hunter-x-hunter.jpg";
 import azumanga from "@/assets/images/anime/azumanga-daioh.jpg";
-import yourLieInApril from "@/assets/images/anime/your-lie-in-april.jpg";
 import kaijuNo8 from "@/assets/images/anime/kaiju-no-8.jpg";
 import codeGeass from "@/assets/images/anime/code-geass.jpg";
 import gintama from "@/assets/images/anime/gintama.jpg";
 import steinsGate from "@/assets/images/anime/steins-gate.jpg";
 import fullmetalAlchemist from "@/assets/images/anime/fullmetal-alchemist-brotherhood.jpg";
+import gachiakuta from "@/assets/images/anime/gachiakuta.jpg";
 import { animeDataType } from "./common-data";
 
 export const animeData: animeDataType[] = [
@@ -327,6 +327,15 @@ export const animeData: animeDataType[] = [
     coverImage: fullmetalAlchemist,
     watched: true,
     status: "Finished",
+    genre: ["Dark Fantasy", "Thriller", "Action"],
+  },
+  {
+    name: "Gachiakuta",
+    episodes: 24,
+    rating: 8,
+    coverImage: gachiakuta,
+    watched: false,
+    status: "Ongoing",
     genre: ["Dark Fantasy", "Thriller", "Action"],
   },
 ];

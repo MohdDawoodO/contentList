@@ -1,6 +1,7 @@
 "use client";
 
 import GameCard from "@/components/games/game-card";
+import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
 import { pages } from "@/data/common-data";
 import { gameData } from "@/data/game-data";
 import {
@@ -64,6 +65,7 @@ export default function Game() {
             <p>Try changing search keyword or filters.</p>
           </div>
         )}
+        <ScrollToTopButton color={currentPage.accent} />
       </div>
     </div>
   );

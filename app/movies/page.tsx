@@ -1,6 +1,7 @@
 "use client";
 
 import MovieCard from "@/components/movies/movie-card";
+import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
 import { pages } from "@/data/common-data";
 import { movieData } from "@/data/movie-data";
 import {
@@ -67,6 +68,7 @@ export default function Movie() {
             <p>Try changing search keyword or filters.</p>
           </div>
         )}
+        <ScrollToTopButton color={currentPage.accent} />
       </div>
     </div>
   );

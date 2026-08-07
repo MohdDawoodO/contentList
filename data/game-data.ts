@@ -28,6 +28,8 @@ import minecraft from "@/assets/images/games/minecraft.jpg";
 import skillwarz from "@/assets/images/games/skillwarz.png";
 import spiderManMilesMorales from "@/assets/images/games/spider-man-miles-morales.jpg";
 import tinyGlade from "@/assets/images/games/tiny-glade.jpg";
+import tombRaider from "@/assets/images/games/tomb-raider.jpg";
+import justCause from "@/assets/images/games/just-cause-3.jpg";
 import { gameDataType } from "./common-data";
 
 export const gameData: gameDataType[] = [
@@ -270,5 +272,21 @@ export const gameData: gameDataType[] = [
     coverImage: battlefield3,
     played: true,
     genre: ["Action", "FPS"],
+  },
+  {
+    name: "Tomb Raider",
+    release: new Date("2013-03-05"),
+    rating: 8.9,
+    coverImage: tombRaider,
+    played: true,
+    genre: ["Action", "Survival", "Fantasy"],
+  },
+  {
+    name: "Just Cause 3",
+    release: new Date("2015-12-01"),
+    rating: 7.3,
+    coverImage: justCause,
+    played: true,
+    genre: ["Action", "Open World"],
   },
 ];

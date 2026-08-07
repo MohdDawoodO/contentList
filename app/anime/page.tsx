@@ -1,6 +1,7 @@
 "use client";
 
 import AnimeCard from "@/components/anime/anime-card";
+import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
 import { animeData } from "@/data/anime-data";
 import { pages } from "@/data/common-data";
 import { animeFilter } from "@/utils/anime-filter";
@@ -65,6 +66,7 @@ export default function Anime() {
             <p>Try changing search keyword or filters.</p>
           </div>
         )}
+        <ScrollToTopButton color={currentPage.accent} />
       </div>
     </div>
   );
