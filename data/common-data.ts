@@ -194,6 +194,7 @@ export const gameGenreFilter: gameGenreType[] = [
   "Racing",
   "Sandbox",
   "Shooter",
+  "Strategy",
   "Survival",
 ];
 export const bookGenreFilter: bookGenreType[] = [
