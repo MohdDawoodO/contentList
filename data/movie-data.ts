@@ -98,7 +98,6 @@ import despicableMe2 from "@/assets/images/movies/despicable-me-2.jpg";
 import despicableMe3 from "@/assets/images/movies/despicable-me-3.jpg";
 import theCroods from "@/assets/images/movies/the-croods.png";
 import theCroods2 from "@/assets/images/movies/the-croods-2.jpg";
-import spiritedAway from "@/assets/images/movies/spirited-away.jpg";
 import spongeBob from "@/assets/images/movies/sponge-bob.jpg";
 import spongeBob2 from "@/assets/images/movies/sponge-bob-2.jpg";
 import shutterIsland from "@/assets/images/movies/shutter-island.jpg";
@@ -111,6 +110,21 @@ import paddington2 from "@/assets/images/movies/paddington-2.jpg";
 import paddington from "@/assets/images/movies/paddington.jpg";
 import teenTitansGo from "@/assets/images/movies/teen-titans-go.jpg";
 import teenTitansGo2 from "@/assets/images/movies/teen-titans-go-2.png";
+import cloudyWithAChanceOfMeatballs2 from "@/assets/images/movies/cloudy-with-a-chance-of-meatballs-2.jpg";
+import epic from "@/assets/images/movies/epic.jpg";
+import godzillaKingOfMonsters from "@/assets/images/movies/godzilla-king-of-monsters.png";
+import hotelTransylvania from "@/assets/images/movies/hotel-transylvania.jpg";
+import hotelTransylvania2 from "@/assets/images/movies/hotel-transylvania-2.jpg";
+import hotelTransylvania4 from "@/assets/images/movies/hotel-transylvania-4.jpg";
+import migration from "@/assets/images/movies/migration.jpg";
+import nowYouSeeMe2 from "@/assets/images/movies/now-you-see-me-2.jpg";
+import nowYouSeeMe from "@/assets/images/movies/now-you-see-me.jpg";
+import openSeason from "@/assets/images/movies/open-season.jpg";
+import openSeason2 from "@/assets/images/movies/open-season-2.jpg";
+import openSeason3 from "@/assets/images/movies/open-season-3.jpg";
+import sorcerersApprentice from "@/assets/images/movies/sorcerers-apprentice.jpg";
+import storks from "@/assets/images/movies/storks.jpg";
+import theSheepDetectives from "@/assets/images/movies/the-sheep-detectives.jpg";
 import { movieDataType } from "./common-data";
 
 export const movieData: movieDataType[] = [
@@ -1021,8 +1035,6 @@ export const movieData: movieDataType[] = [
     type: "Cartoon",
     genre: ["Action", "Comedy", "Fantasy", "Family", "Sci-fi"],
   },
-
-  //* new entries
   {
     name: "The Croods",
     release: new Date("2013-03-22"),
@@ -1040,15 +1052,6 @@ export const movieData: movieDataType[] = [
     watched: true,
     type: "Cartoon",
     genre: ["Adventure", "Comedy", "Fantasy", "Family"],
-  },
-  {
-    name: "Spirited Away",
-    release: new Date("2001-07-20"),
-    rating: 8.6,
-    coverImage: spiritedAway,
-    watched: false,
-    type: "Cartoon",
-    genre: ["Adventure", "Fantasy", "Family"],
   },
   {
     name: "SpongeBob: Sponge on the Run",
@@ -1163,5 +1166,140 @@ export const movieData: movieDataType[] = [
     watched: true,
     type: "Cartoon",
     genre: ["Action", "Comedy", "Adventure", "Mystery"],
+  },
+  {
+    name: "Cloudy With a Chance of Meatballs 2",
+    release: new Date("2013-09-27"),
+    rating: 6.3,
+    coverImage: cloudyWithAChanceOfMeatballs2,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Adventure", "Comedy", "Sci-fi", "Fantasy"],
+  },
+  {
+    name: "Epic",
+    release: new Date("2013-05-24"),
+    rating: 6.6,
+    coverImage: epic,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Action", "Comedy", "Adventure", "Fantasy"],
+  },
+  {
+    name: "Godzilla: King of Monsters",
+    release: new Date("2019-05-31"),
+    rating: 6,
+    coverImage: godzillaKingOfMonsters,
+    watched: true,
+    type: "Movie",
+    genre: ["Action", "Fantasy", "Adventure", "Sci-fi"],
+  },
+  {
+    name: "Hotel Transylvania",
+    release: new Date("2012-09-28"),
+    rating: 7.1,
+    coverImage: hotelTransylvania,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Fantasy", "Comedy", "Family"],
+  },
+  {
+    name: "Hotel Transylvania 2",
+    release: new Date("2015-09-25"),
+    rating: 6.6,
+    coverImage: hotelTransylvania2,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Fantasy", "Comedy", "Family"],
+  },
+  {
+    name: "Hotel Transylvania 4",
+    release: new Date("2022-01-14"),
+    rating: 6,
+    coverImage: hotelTransylvania4,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Fantasy", "Comedy", "Family"],
+  },
+  {
+    name: "Migration",
+    release: new Date("2023-10-19"),
+    rating: 6.6,
+    coverImage: migration,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Adventure", "Comedy", "Family"],
+  },
+  {
+    name: "Now You See Me",
+    release: new Date("2013-05-31"),
+    rating: 7.2,
+    coverImage: nowYouSeeMe,
+    watched: true,
+    type: "Movie",
+    genre: ["Action", "Comedy", "Fantasy"],
+  },
+  {
+    name: "Now You See Me 2",
+    release: new Date("2016-06-10"),
+    rating: 6.4,
+    coverImage: nowYouSeeMe2,
+    watched: true,
+    type: "Movie",
+    genre: ["Action", "Comedy", "Fantasy"],
+  },
+  {
+    name: "Open Season",
+    release: new Date("2006-09-29"),
+    rating: 6.1,
+    coverImage: openSeason,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Adventure", "Comedy"],
+  },
+  {
+    name: "Open Season 2",
+    release: new Date("2009-01-27"),
+    rating: 5.5,
+    coverImage: openSeason2,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Adventure", "Comedy"],
+  },
+  {
+    name: "Open Season 3",
+    release: new Date("2010-10-21"),
+    rating: 5,
+    coverImage: openSeason3,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Adventure", "Comedy"],
+  },
+  {
+    name: "Sorcerer's Apprentice",
+    release: new Date("2010-07-14"),
+    rating: 6.1,
+    coverImage: sorcerersApprentice,
+    watched: true,
+    type: "Movie",
+    genre: ["Action", "Fantasy", "Sci-fi"],
+  },
+  {
+    name: "Storks",
+    release: new Date("2016-09-23"),
+    rating: 6.8,
+    coverImage: storks,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Adventure", "Comedy", "Fantasy"],
+  },
+  {
+    name: "The Sheep Detectives",
+    release: new Date("2026-05-08"),
+    rating: 7.4,
+    coverImage: theSheepDetectives,
+    watched: true,
+    type: "Movie",
+    genre: ["Murder", "Mystery", "Comedy"],
   },
 ];

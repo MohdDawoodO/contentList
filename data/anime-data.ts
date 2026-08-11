@@ -30,7 +30,11 @@ import codeGeass from "@/assets/images/anime/code-geass.jpg";
 import gintama from "@/assets/images/anime/gintama.jpg";
 import steinsGate from "@/assets/images/anime/steins-gate.jpg";
 import fullmetalAlchemist from "@/assets/images/anime/fullmetal-alchemist-brotherhood.jpg";
+import spiritedAway from "@/assets/images/movies/spirited-away.jpg";
 import gachiakuta from "@/assets/images/anime/gachiakuta.jpg";
+import erased from "@/assets/images/anime/erased.jpg";
+import futureDiary from "@/assets/images/anime/future-diary.jpg";
+import suzume from "@/assets/images/anime/suzume.jpg";
 import { animeDataType } from "./common-data";
 
 export const animeData: animeDataType[] = [
@@ -337,5 +341,41 @@ export const animeData: animeDataType[] = [
     watched: false,
     status: "Ongoing",
     genre: ["Dark Fantasy", "Thriller", "Action"],
+  },
+  {
+    name: "Spirited Away",
+    rating: 8.6,
+    episodes: 1,
+    coverImage: spiritedAway,
+    watched: false,
+    status: "Finished",
+    genre: ["Adventure", "Fantasy", "Family"],
+  },
+  {
+    name: "Suzume",
+    rating: 7.6,
+    episodes: 1,
+    coverImage: suzume,
+    watched: true,
+    status: "Finished",
+    genre: ["Adventure", "Fantasy", "Family"],
+  },
+  {
+    name: "Erased",
+    rating: 8.4,
+    episodes: 12,
+    coverImage: erased,
+    watched: false,
+    status: "Finished",
+    genre: ["Mystery", "Thriller", "Sci-fi"],
+  },
+  {
+    name: "Future Diary",
+    rating: 7.4,
+    episodes: 26,
+    coverImage: futureDiary,
+    watched: false,
+    status: "Finished",
+    genre: ["Action", "Thriller", "Horror"],
   },
 ];

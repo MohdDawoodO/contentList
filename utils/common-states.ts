@@ -1,6 +1,8 @@
 import {
   animeFiltersType,
   animeSortMethodType,
+  bookFiltersType,
+  bookSortMethodType,
   gameFiltersType,
   gameSortMethodType,
   movieFiltersType,
@@ -20,6 +22,10 @@ export const movieSortMethodState = atom<{
   method: movieSortMethodType;
   reverse: boolean;
 }>({ method: "Rating", reverse: false });
+export const bookSortMethodState = atom<{
+  method: bookSortMethodType;
+  reverse: boolean;
+}>({ method: "Rating", reverse: false });
 
 export const searchState = atom("");
 
@@ -34,5 +40,9 @@ export const gameFiltersState = atom<gameFiltersType>({
 export const movieFiltersState = atom<movieFiltersType>({
   watchedStatus: "All",
   type: "All",
+  genre: "All",
+});
+export const bookFiltersState = atom<bookFiltersType>({
+  readStatus: "All",
   genre: "All",
 });

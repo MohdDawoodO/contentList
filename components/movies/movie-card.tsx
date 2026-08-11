@@ -45,8 +45,8 @@ export default function MovieCard({
                 : release.getDate()) +
               "-" +
               (release.getMonth() < 10
-                ? "0" + release.getMonth()
-                : release.getMonth()) +
+                ? "0" + (release.getMonth() + 1)
+                : release.getMonth() + 1) +
               "-" +
               release.getFullYear()}
         </Badge>

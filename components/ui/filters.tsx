@@ -23,7 +23,7 @@ export default function Filters({
   currentPage: pagesDataType;
 }) {
   return (
-    <div className="relative z-20 w-fit">
+    <div className={`relative w-fit ${open && "z-20"}`}>
       <button
         onClick={() => setOpen(!open)}
         className="flex h-full cursor-pointer items-center justify-between gap-2 rounded-sm p-2 duration-200 hover:opacity-80 focus:outline-4 sm:p-2 sm:px-4"
@@ -59,6 +59,10 @@ export default function Filters({
                       setState({ ...state, watchedStatus: status });
                       return;
                     }
+                    if (state.readStatus) {
+                      setState({ ...state, readStatus: status });
+                      return;
+                    }
                     setState({ ...state, playedStatus: status });
                   }}
                 >
@@ -67,6 +71,9 @@ export default function Filters({
                     <TiTick size={16} className="sm:scale-110" />
                   )}
                   {status === state.playedStatus && (
+                    <TiTick size={16} className="sm:scale-110" />
+                  )}
+                  {status === state.readStatus && (
                     <TiTick size={16} className="sm:scale-110" />
                   )}
                 </button>

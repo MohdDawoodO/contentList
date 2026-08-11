@@ -6,20 +6,22 @@ import { PiSortAscendingBold } from "react-icons/pi";
 import { TbSortAscending } from "react-icons/tb";
 
 export default function Select({
+  open,
+  setOpen,
   state,
   setState,
   items,
   currentPage,
 }: {
+  open: boolean;
+  setOpen: Function;
   state: { method: string; reverse: boolean };
   setState: Function;
   items: string[];
   currentPage: pagesDataType;
 }) {
-  const [open, setOpen] = useState(false);
-
   return (
-    <div className="flex items-center gap-2">
+    <div className={`flex items-center gap-2 ${open && "z-20"}`}>
       <p className="hidden min-w-fit sm:block">Sort By:</p>
       <div className="relative w-fit">
         <button

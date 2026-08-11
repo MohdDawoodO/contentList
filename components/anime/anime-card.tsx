@@ -64,7 +64,7 @@ export default function AnimeCard({
       >
         <h2 className="text-sm font-semibold">{name}</h2>
         <h2 className="text-xs font-semibold opacity-80">
-          {genre[0] + " " + (genre[1] ? "/ " + genre[1] : "")}
+          {genre[0] + " " + (genre[1] ? "• " + genre[1] : "")}
         </h2>
       </div>
     </div>

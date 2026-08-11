@@ -30,6 +30,22 @@ import spiderManMilesMorales from "@/assets/images/games/spider-man-miles-morale
 import tinyGlade from "@/assets/images/games/tiny-glade.jpg";
 import tombRaider from "@/assets/images/games/tomb-raider.jpg";
 import justCause from "@/assets/images/games/just-cause-3.jpg";
+import riseOfTombRaider from "@/assets/images/games/rise-of-the-tomb-raider.jpg";
+import shadowOfTombRaider from "@/assets/images/games/shadow-of-the-tomb-raider.jpg";
+import godOfWar from "@/assets/images/games/god-of-war.jpg";
+import godOfWarRagnarok from "@/assets/images/games/god-of-war-ragnarok.jpg";
+import NFSMostWanted from "@/assets/images/games/nfs-most-wanted.jpg";
+import CODMW from "@/assets/images/games/cod-mw.jpg";
+import CODMW2 from "@/assets/images/games/cod-mw2.jpg";
+import CODMW3 from "@/assets/images/games/cod-mw-3.png";
+import CODMWRemake from "@/assets/images/games/cod-mw-remake.jpeg";
+import CODMW2Remake from "@/assets/images/games/cod-mw2-remake.jpg";
+import CODMW3Remake from "@/assets/images/games/cod-mw3-remake.png";
+import CODBo from "@/assets/images/games/cod-bo.jpg";
+import CODBo2 from "@/assets/images/games/cod-bo2.png";
+import CODBo3 from "@/assets/images/games/cod-bo3.jpg";
+import CODBoColdWar from "@/assets/images/games/cod-bo-cold-war.jpg";
+import plantVsZombies from "@/assets/images/games/plant-vs-zombies.jpg";
 import { gameDataType } from "./common-data";
 
 export const gameData: gameDataType[] = [
@@ -288,5 +304,133 @@ export const gameData: gameDataType[] = [
     coverImage: justCause,
     played: true,
     genre: ["Action", "Open World"],
+  },
+  {
+    name: "Rise of the Tomb Raider",
+    release: new Date("2015-11-10"),
+    rating: 9,
+    coverImage: riseOfTombRaider,
+    played: false,
+    genre: ["Action", "Survival", "Fantasy"],
+  },
+  {
+    name: "Shadow of the Tomb Raider",
+    release: new Date("2018-09-14"),
+    rating: 8.9,
+    coverImage: shadowOfTombRaider,
+    played: false,
+    genre: ["Action", "Survival", "Fantasy"],
+  },
+  {
+    name: "God of War",
+    release: new Date("2015-12-01"),
+    rating: 9.8,
+    coverImage: godOfWar,
+    played: false,
+    genre: ["Action", "Fantasy"],
+  },
+  {
+    name: "God of War Ragnarök",
+    release: new Date("2022-11-19"),
+    rating: 9.4,
+    coverImage: godOfWarRagnarok,
+    played: false,
+    genre: ["Action", "Fantasy"],
+  },
+  {
+    name: "Need for Speed: Most Wanted",
+    release: new Date("2005-11-15"),
+    rating: 7.9,
+    coverImage: NFSMostWanted,
+    played: true,
+    genre: ["Racing", "Open World"],
+  },
+  {
+    name: "Call of Duty 4: Modern Warfare",
+    release: new Date("2007-11-12"),
+    rating: 9.1,
+    coverImage: CODMW,
+    played: false,
+    genre: ["Action", "FPS"],
+  },
+  {
+    name: "Call of Duty: Modern Warfare II",
+    release: new Date("2009-11-10"),
+    rating: 9.1,
+    coverImage: CODMW2,
+    played: false,
+    genre: ["Action", "FPS"],
+  },
+  {
+    name: "Call of Duty: Modern Warfare III",
+    release: new Date("2011-11-08"),
+    rating: 8.7,
+    coverImage: CODMW3,
+    played: false,
+    genre: ["Action", "FPS"],
+  },
+  {
+    name: "Call of Duty: Modern Warfare Remake",
+    release: new Date("2016-11-04"),
+    rating: 7.9,
+    coverImage: CODMWRemake,
+    played: false,
+    genre: ["Action", "FPS"],
+  },
+  {
+    name: "Call of Duty: Modern Warfare II Remake",
+    release: new Date("2022-10-28"),
+    rating: 6.8,
+    coverImage: CODMW2Remake,
+    played: false,
+    genre: ["Action", "FPS"],
+  },
+  {
+    name: "Call of Duty: Modern Warfare III Remake",
+    release: new Date("2023-11-10"),
+    rating: 5.7,
+    coverImage: CODMW3Remake,
+    played: false,
+    genre: ["Action", "FPS"],
+  },
+  {
+    name: "Call of Duty: Black Ops",
+    release: new Date("2010-11-09"),
+    rating: 8.9,
+    coverImage: CODBo,
+    played: false,
+    genre: ["Action", "FPS"],
+  },
+  {
+    name: "Call of Duty: Black Ops II",
+    release: new Date("2012-11-13"),
+    rating: 9.1,
+    coverImage: CODBo2,
+    played: false,
+    genre: ["Action", "FPS"],
+  },
+  {
+    name: "Call of Duty: Black Ops III",
+    release: new Date("2015-11-06"),
+    rating: 8.3,
+    coverImage: CODBo3,
+    played: false,
+    genre: ["Action", "FPS"],
+  },
+  {
+    name: "Call of Duty: Black Ops Cold War",
+    release: new Date("2020-11-13"),
+    rating: 7.7,
+    coverImage: CODBoColdWar,
+    played: false,
+    genre: ["Action", "FPS"],
+  },
+  {
+    name: "Plant Vs. Zombies",
+    release: new Date("2009-05-05"),
+    rating: 8.6,
+    coverImage: plantVsZombies,
+    played: true,
+    genre: ["Action", "Strategy"],
   },
 ];

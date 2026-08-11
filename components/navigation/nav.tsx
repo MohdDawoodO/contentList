@@ -2,6 +2,8 @@
 
 import {
   animeSortMethods,
+  bookGenreFilter,
+  bookSortMethods,
   gameGenreFilter,
   gameSortMethods,
   mediaGenreFilter,
@@ -9,6 +11,7 @@ import {
   movieTypeFilter,
   pages,
   playedStatusFilter,
+  readStatusFilter,
   watchedStatusFilter,
 } from "@/data/common-data";
 import { usePathname } from "next/navigation";
@@ -23,6 +26,8 @@ import {
   animeFiltersState,
   movieFiltersState,
   gameFiltersState,
+  bookSortMethodState,
+  bookFiltersState,
 } from "@/utils/common-states";
 import { useAtom } from "jotai";
 import Filters from "../ui/filters";
@@ -37,12 +42,15 @@ export default function Nav() {
   const [animeSortMethod, setAnimeSortMethod] = useAtom(animeSortMethodState);
   const [movieSortMethod, setMovieSortMethod] = useAtom(movieSortMethodState);
   const [gameSortMethod, setGameSortMethod] = useAtom(gameSortMethodState);
+  const [bookSortMethod, setBookSortMethod] = useAtom(bookSortMethodState);
 
   const [animeFilters, setAnimeFilters] = useAtom(animeFiltersState);
   const [gameFilters, setGameFilters] = useAtom(gameFiltersState);
   const [movieFilters, setMovieFilters] = useAtom(movieFiltersState);
+  const [bookFilters, setBookFilters] = useAtom(bookFiltersState);
 
-  const [open, setOpen] = useState(false);
+  const [filterOpen, setFilterOpen] = useState(false);
+  const [sortOpen, setSortOpen] = useState(false);
 
   function movieSortMethodsHandler() {
     if (movieFilters.type === "Series")
@@ -61,10 +69,12 @@ export default function Nav() {
     setAnimeSortMethod({ method: "Default", reverse: false });
     setGameSortMethod({ method: "Rating", reverse: false });
     setMovieSortMethod({ method: "Rating", reverse: false });
+    setBookSortMethod({ method: "Rating", reverse: false });
 
     setAnimeFilters({ genre: "All", watchedStatus: "All" });
     setGameFilters({ genre: "All", playedStatus: "All" });
     setMovieFilters({ genre: "All", type: "All", watchedStatus: "All" });
+    setBookFilters({ genre: "All", readStatus: "All" });
 
     return () => {
       controller.abort();
@@ -81,7 +91,6 @@ export default function Nav() {
     <>
       <nav className="relative flex min-h-[40vh] items-end lg:min-h-[50vh]">
         <NavBackground currentPage={currentPage} />
-
         <div className="relative flex w-full flex-col items-center justify-center gap-4 pt-8 pb-4 sm:gap-8 sm:pt-12 lg:pb-8">
           <div>
             <h1 className="text-2xl font-semibold sm:text-3xl">
@@ -111,7 +120,7 @@ export default function Nav() {
                 " " +
                 currentPage.title.toLowerCase()
               }
-              className="p-x2 inline-block w-full rounded-sm bg-white p-2 font-semibold transition-all duration-200 focus:outline-4 sm:p-2 sm:px-4"
+              className="xs:p-2 inline-block w-full rounded-sm bg-white p-1 px-2 font-semibold transition-all duration-200 focus:outline-4 sm:p-2 sm:px-4"
               style={{
                 color: currentPage.accent,
                 background: currentPage.bg + "75",
@@ -122,10 +131,14 @@ export default function Nav() {
             <div className="flex justify-between">
               <div className="flex items-center">
                 <Filters
-                  open={open}
-                  setOpen={setOpen}
+                  open={filterOpen}
+                  setOpen={setFilterOpen}
                   genreFilter={
-                    pathname === "/games" ? gameGenreFilter : mediaGenreFilter
+                    pathname === "/games"
+                      ? gameGenreFilter
+                      : pathname === "/books"
+                        ? bookGenreFilter
+                        : mediaGenreFilter
                   }
                   mediaTypeFilter={
                     pathname === "/movies" ? movieTypeFilter : undefined
@@ -133,47 +146,61 @@ export default function Nav() {
                   statusFilter={
                     pathname === "/games"
                       ? playedStatusFilter
-                      : watchedStatusFilter
+                      : pathname === "/books"
+                        ? readStatusFilter
+                        : watchedStatusFilter
                   }
                   state={
                     pathname === "/anime"
                       ? animeFilters
                       : pathname === "/games"
                         ? gameFilters
-                        : movieFilters
+                        : pathname === "/books"
+                          ? bookFilters
+                          : movieFilters
                   }
                   setState={
                     pathname === "/anime"
                       ? setAnimeFilters
                       : pathname === "/games"
                         ? setGameFilters
-                        : setMovieFilters
+                        : pathname === "/books"
+                          ? setBookFilters
+                          : setMovieFilters
                   }
                   currentPage={currentPage}
                 />
               </div>
 
               <Select
+                open={sortOpen}
+                setOpen={setSortOpen}
                 state={
                   pathname === "/anime"
                     ? animeSortMethod
                     : pathname === "/games"
                       ? gameSortMethod
-                      : movieSortMethod
+                      : pathname === "/books"
+                        ? bookSortMethod
+                        : movieSortMethod
                 }
                 setState={
                   pathname === "/anime"
                     ? setAnimeSortMethod
                     : pathname === "/games"
                       ? setGameSortMethod
-                      : setMovieSortMethod
+                      : pathname === "/books"
+                        ? setBookSortMethod
+                        : setMovieSortMethod
                 }
                 items={
                   pathname === "/anime"
                     ? animeSortMethods
                     : pathname === "/games"
                       ? gameSortMethods
-                      : movieSortMethodsHandler()
+                      : pathname === "/books"
+                        ? bookSortMethods
+                        : movieSortMethodsHandler()
                 }
                 currentPage={currentPage}
               />
@@ -184,9 +211,11 @@ export default function Nav() {
       </nav>
 
       <AnimatePresence>
-        {open && (
+        {(filterOpen || sortOpen) && (
           <motion.div
-            onClick={() => setOpen(false)}
+            onClick={() => {
+              (setSortOpen(false), setFilterOpen(false));
+            }}
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.2 }}
             exit={{ opacity: 0 }}

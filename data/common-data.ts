@@ -1,6 +1,7 @@
 import gamesBG from "@/assets/backgrounds/games-bg.jpg";
 import animeBG from "@/assets/backgrounds/anime-bg.jpg";
 import moviesBG from "@/assets/backgrounds/movies-bg.jpg";
+import booksBG from "@/assets/backgrounds/books-bg.jpg";
 import { StaticImageData } from "next/image";
 
 export type pagesDataType = {
@@ -16,6 +17,7 @@ export type pagesDataType = {
 type mediaType = "All" | "Cartoon" | "Series" | "Movie";
 type watchedStatusType = "All" | "Watched" | "Not Watched";
 type playedStatusType = "All" | "Played" | "Not Played";
+type readStatusType = "All" | "Read" | "Not Read";
 
 type mediaGenreType =
   | "All"
@@ -43,7 +45,24 @@ type gameGenreType =
   | "Racing"
   | "Sandbox"
   | "Shooter"
+  | "Strategy"
   | "Survival";
+
+type bookGenreType =
+  | "All"
+  | "Action"
+  | "Adventure"
+  | "Crime"
+  | "Dark Fantasy"
+  | "Didatic"
+  | "Fantasy"
+  | "Fiction"
+  | "Murder"
+  | "History"
+  | "Survival"
+  | "Mystery"
+  | "Science"
+  | "Studies";
 
 export type movieFiltersType = {
   watchedStatus: watchedStatusType;
@@ -58,11 +77,16 @@ export type gameFiltersType = {
   playedStatus: playedStatusType;
   genre: gameGenreType;
 };
+export type bookFiltersType = {
+  readStatus: readStatusType;
+  genre: bookGenreType;
+};
 
 export type movieSortMethodType = "Rating" | "Alphabets" | "Date" | "Episodes";
 export type gameSortMethodType = "Rating" | "Alphabets" | "Date";
 export type animeSortMethodType =
   "Default" | "Alphabets" | "Episodes" | "Rating";
+export type bookSortMethodType = "Rating" | "Alphabets" | "Date";
 
 export type movieDataType = {
   name: string;
@@ -92,6 +116,14 @@ export type animeDataType = {
   status: "Ongoing" | "Finished";
   genre: mediaGenreType[];
 };
+export type bookDataType = {
+  name: string;
+  rating: number;
+  coverImage: StaticImageData;
+  release: Date;
+  read: boolean;
+  genre: bookGenreType[];
+};
 
 export const animeSortMethods: animeSortMethodType[] = [
   "Default",
@@ -109,6 +141,11 @@ export const movieSortMethods: movieSortMethodType[] = [
   "Alphabets",
   "Date",
 ];
+export const bookSortMethods: bookSortMethodType[] = [
+  "Rating",
+  "Alphabets",
+  "Date",
+];
 
 export const watchedStatusFilter: watchedStatusType[] = [
   "All",
@@ -121,6 +158,7 @@ export const playedStatusFilter: playedStatusType[] = [
   "Played",
   "Not Played",
 ];
+export const readStatusFilter: readStatusType[] = ["All", "Read", "Not Read"];
 
 export const movieTypeFilter: mediaType[] = [
   "All",
@@ -158,6 +196,22 @@ export const gameGenreFilter: gameGenreType[] = [
   "Shooter",
   "Survival",
 ];
+export const bookGenreFilter: bookGenreType[] = [
+  "All",
+  "Action",
+  "Adventure",
+  "Crime",
+  "Dark Fantasy",
+  "Didatic",
+  "Fantasy",
+  "Fiction",
+  "Murder",
+  "History",
+  "Mystery",
+  "Science",
+  "Studies",
+  "Survival",
+];
 
 export const pages = [
   {
@@ -186,5 +240,14 @@ export const pages = [
     bg: "#0b0d0e",
     path: "/movies",
     image: moviesBG,
+  },
+  {
+    title: "Book",
+    body: "books",
+    accent: "#c46d60",
+    secondary: "#56150B",
+    bg: "#0e0c0c",
+    path: "/books",
+    image: booksBG,
   },
 ];

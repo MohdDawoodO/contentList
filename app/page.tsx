@@ -17,7 +17,7 @@ export default function Home() {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentID((currentID + 1) % 3);
+      setCurrentID((currentID + 1) % 4);
     }, 8000);
 
     return () => clearInterval(interval);
@@ -82,7 +82,7 @@ export default function Home() {
           {pages.map((page) => (
             <Link key={page.title} href={page.path} tabIndex={-1}>
               <button
-                className="w-18 cursor-pointer rounded-md p-2 text-sm font-semibold duration-100 hover:translate-y-px focus:outline-4 active:translate-y-1 sm:w-22 sm:text-lg"
+                className="xs:w-18 w-16 cursor-pointer rounded-md p-2 text-sm font-semibold duration-100 hover:translate-y-px focus:outline-4 active:translate-y-1 sm:w-22 sm:text-lg"
                 style={{
                   background: page.accent,
                   boxShadow: `0px 0px 25px ${page.accent}80`,

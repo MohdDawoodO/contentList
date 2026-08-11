@@ -40,8 +40,8 @@ export default function GameCard({
             : release.getDate()) +
             "-" +
             (release.getMonth() < 10
-              ? "0" + release.getMonth()
-              : release.getMonth()) +
+              ? "0" + (release.getMonth() + 1)
+              : release.getMonth() + 1) +
             "-" +
             release.getFullYear()}
         </Badge>
@@ -62,7 +62,7 @@ export default function GameCard({
       >
         <h2 className="text-sm font-semibold">{name}</h2>
         <h2 className="text-xs font-semibold opacity-80">
-          {genre[0] + " " + (genre[1] ? "/ " + genre[1] : "")}
+          {genre[0] + " " + (genre[1] ? "• " + genre[1] : "")}
         </h2>
       </div>
     </div>
