@@ -8,7 +8,6 @@ import harryPotter6 from "@/assets/images/books/harry-potter-6.jpg";
 import harryPotter7 from "@/assets/images/books/harry-potter-7.jpg";
 import hisLastBow from "@/assets/images/books/his-last-bow.jpg";
 import princeCaspian from "@/assets/images/books/prince-caspian.jpg";
-import quran from "@/assets/images/books/quran.jpg";
 import theAdventuresOfSherlockHolmes from "@/assets/images/books/the-adventures-of-sherlock-holmes.jpg";
 import theCaseBookOfSherlockHolmes from "@/assets/images/books/the-casebook-of-sherlock-holmes.jpg";
 import theDeathCure from "@/assets/images/books/the-death-cure.jpg";
@@ -36,7 +35,7 @@ import { bookDataType } from "./common-data";
 export const bookData: bookDataType[] = [
   {
     name: "A Study in Scarlet",
-    genre: ["Crime", "Mystery", "Fiction"],
+    genre: ["Murder", "Mystery", "Fiction"],
     rating: 8.2,
     coverImage: aStudyInScarlet,
     read: true,
@@ -44,7 +43,7 @@ export const bookData: bookDataType[] = [
   },
   {
     name: "The Sign of Four",
-    genre: ["Crime", "Mystery", "Fiction"],
+    genre: ["Murder", "Mystery", "Fiction"],
     rating: 7.8,
     coverImage: theSignOfFour,
     read: true,
@@ -132,7 +131,7 @@ export const bookData: bookDataType[] = [
   },
   {
     name: "Harry Potter and the Goblet of Fire",
-    genre: ["Action", "Adventure", "Dark Fantasy", "Murder", "Fiction"],
+    genre: ["Action", "Adventure", "Dark Fantasy", "Fiction"],
     rating: 9.2,
     coverImage: harryPotter4,
     read: false,
@@ -140,7 +139,7 @@ export const bookData: bookDataType[] = [
   },
   {
     name: "Harry Potter and the Order of Phoenix",
-    genre: ["Action", "Adventure", "Dark Fantasy", "Murder", "Fiction"],
+    genre: ["Action", "Adventure", "Dark Fantasy", "Fiction"],
     rating: 9,
     coverImage: harryPotter5,
     read: false,
@@ -148,7 +147,7 @@ export const bookData: bookDataType[] = [
   },
   {
     name: "Harry Potter and the Half Blood Prince",
-    genre: ["Action", "Adventure", "Dark Fantasy", "Murder", "Fiction"],
+    genre: ["Action", "Adventure", "Dark Fantasy", "Fiction"],
     rating: 9.2,
     coverImage: harryPotter6,
     read: false,
@@ -156,7 +155,7 @@ export const bookData: bookDataType[] = [
   },
   {
     name: "Harry Potter and the Deathly Hallows",
-    genre: ["Action", "Adventure", "Dark Fantasy", "Murder", "Fiction"],
+    genre: ["Action", "Adventure", "Dark Fantasy", "Fiction"],
     rating: 9.2,
     coverImage: harryPotter7,
     read: false,
@@ -187,16 +186,8 @@ export const bookData: bookDataType[] = [
     release: new Date("2022-09-13"),
   },
   {
-    name: "Qur'an Majeed",
-    genre: ["Didatic", "History"],
-    rating: 10,
-    coverImage: quran,
-    read: true,
-    release: new Date("600"),
-  },
-  {
     name: "The Maze Runner",
-    genre: ["Survival", "Mystery", "Science", "Fiction", "Fantasy"],
+    genre: ["Survival", "Fantasy", "Science", "Fiction"],
     rating: 8.2,
     coverImage: theMazeRunner,
     read: false,
@@ -204,7 +195,7 @@ export const bookData: bookDataType[] = [
   },
   {
     name: "The Scorch Trails",
-    genre: ["Survival", "Mystery", "Science", "Fiction", "Fantasy"],
+    genre: ["Survival", "Fantasy", "Science", "Fiction"],
     rating: 7.8,
     coverImage: theScorchTrails,
     read: false,
@@ -212,7 +203,7 @@ export const bookData: bookDataType[] = [
   },
   {
     name: "The Death Cure",
-    genre: ["Survival", "Mystery", "Science", "Fiction", "Fantasy"],
+    genre: ["Survival", "Fantasy", "Science", "Fiction"],
     rating: 7.6,
     coverImage: theDeathCure,
     read: false,
@@ -220,7 +211,7 @@ export const bookData: bookDataType[] = [
   },
   {
     name: "The Lion, the Witch, and the Wardrobe",
-    genre: ["Adventure", "Fantasy", "Fiction"],
+    genre: ["Adventure", "Fantasy", "Action", "Fiction"],
     rating: 8.4,
     coverImage: theLionTheWitchAndTheWardrobe,
     read: false,
@@ -228,7 +219,7 @@ export const bookData: bookDataType[] = [
   },
   {
     name: "Prince Caspian",
-    genre: ["Adventure", "Fantasy", "Fiction"],
+    genre: ["Adventure", "Fantasy", "Action", "Fiction"],
     rating: 8,
     coverImage: princeCaspian,
     read: false,
@@ -236,7 +227,7 @@ export const bookData: bookDataType[] = [
   },
   {
     name: "The Voyage of the Dawn Treader",
-    genre: ["Adventure", "Fantasy", "Fiction"],
+    genre: ["Adventure", "Fantasy", "Action", "Fiction"],
     rating: 8.2,
     coverImage: theVoyageOfDawnTreader,
     read: false,
@@ -244,7 +235,7 @@ export const bookData: bookDataType[] = [
   },
   {
     name: "The Silver Chair",
-    genre: ["Adventure", "Fantasy", "Fiction"],
+    genre: ["Adventure", "Fantasy", "Action", "Fiction"],
     rating: 8,
     coverImage: theSilverChair,
     read: false,
@@ -252,7 +243,7 @@ export const bookData: bookDataType[] = [
   },
   {
     name: "The Horse and His Boy",
-    genre: ["Adventure", "Fantasy", "Fiction"],
+    genre: ["Adventure", "Fantasy", "Action", "Fiction"],
     rating: 7.8,
     coverImage: theHorseAndHisBoy,
     read: false,
@@ -260,7 +251,7 @@ export const bookData: bookDataType[] = [
   },
   {
     name: "The Magician's Nephew",
-    genre: ["Adventure", "Fantasy", "Fiction"],
+    genre: ["Adventure", "Fantasy", "Action", "Fiction"],
     rating: 8.2,
     coverImage: theMagiciansNephew,
     read: false,
@@ -268,7 +259,7 @@ export const bookData: bookDataType[] = [
   },
   {
     name: "The Last Battle",
-    genre: ["Adventure", "Fantasy", "Fiction"],
+    genre: ["Adventure", "Fantasy", "Action", "Fiction"],
     rating: 8,
     coverImage: theLastBattle,
     read: false,

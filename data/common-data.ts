@@ -54,11 +54,9 @@ type bookGenreType =
   | "Adventure"
   | "Crime"
   | "Dark Fantasy"
-  | "Didatic"
   | "Fantasy"
   | "Fiction"
   | "Murder"
-  | "History"
   | "Survival"
   | "Mystery"
   | "Science"
@@ -203,11 +201,9 @@ export const bookGenreFilter: bookGenreType[] = [
   "Adventure",
   "Crime",
   "Dark Fantasy",
-  "Didatic",
   "Fantasy",
   "Fiction",
   "Murder",
-  "History",
   "Mystery",
   "Science",
   "Studies",

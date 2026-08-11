@@ -34,17 +34,15 @@ export default function BookCard({
           backgroundColor={currentPage.secondary + "bf"}
           className="absolute right-1 bottom-1 p-1 px-3 backdrop-blur-xs"
         >
-          {name !== "Qur'an Majeed"
-            ? (release.getDate() < 10
-                ? "0" + release.getDate()
-                : release.getDate()) +
-              "-" +
-              (release.getMonth() < 10
-                ? "0" + (release.getMonth() + 1)
-                : release.getMonth() + 1) +
-              "-" +
-              release.getFullYear()
-            : "600-640"}
+          {(release.getDate() < 10
+            ? "0" + release.getDate()
+            : release.getDate()) +
+            "-" +
+            (release.getMonth() < 10
+              ? "0" + (release.getMonth() + 1)
+              : release.getMonth() + 1) +
+            "-" +
+            release.getFullYear()}
         </Badge>
         {read && (
           <Badge
