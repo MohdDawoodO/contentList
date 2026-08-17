@@ -100,7 +100,6 @@ export default function Nav() {
                   color: currentPage.accent,
                   textShadow: `0px 0px 10px ${currentPage.accent}bf`,
                 }}
-                className={`w-24 text-end`}
               >
                 {currentPage.title}
               </span>

@@ -59,7 +59,7 @@ export default function Home() {
                 color: pages[currentID].accent,
                 textShadow: `0px 0px 10px ${pages[currentID].accent}bf`,
               }}
-              className={`w-24 text-end`}
+              className="w-18 text-end sm:w-24"
               initial={{ y: "-100%" }}
               animate={{ y: 0 }}
               exit={{ y: "100%" }}
