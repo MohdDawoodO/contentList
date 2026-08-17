@@ -27,6 +27,8 @@ import theVoyageOfDawnTreader from "@/assets/images/books/the-voyage-of-dawn-tre
 import xkcdHowTo from "@/assets/images/books/xkcd-how-to.png";
 import xkcdWhatIf from "@/assets/images/books/xkcd-what-if.jpg";
 import xkcdWhatIf2 from "@/assets/images/books/xkcd-what-if-2.jpg";
+import xkcdVolume0 from "@/assets/images/books/xkcd-volume-0.png";
+import xkcdThingExplainer from "@/assets/images/books/xkcd-thing-explainer.png";
 import theFellowshipOfTheRing from "@/assets/images/books/the-fellowship-of-the-ring.jpg";
 import theTwoTowers from "@/assets/images/books/the-two-towers.jpg";
 import theReturnOfTheKing from "@/assets/images/books/the-return-of-the-king.jpg";
@@ -184,6 +186,22 @@ export const bookData: bookDataType[] = [
     coverImage: xkcdWhatIf2,
     read: false,
     release: new Date("2022-09-13"),
+  },
+  {
+    name: "XKCD's Volume 0",
+    genre: ["Science", "Comedy"],
+    rating: 8.6,
+    coverImage: xkcdVolume0,
+    read: false,
+    release: new Date("2010-08-24"),
+  },
+  {
+    name: "XKCD's Thing Explainer",
+    genre: ["Science", "Studies"],
+    rating: 8.2,
+    coverImage: xkcdThingExplainer,
+    read: false,
+    release: new Date("2015-11-24"),
   },
   {
     name: "The Maze Runner",

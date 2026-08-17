@@ -20,16 +20,16 @@ export default function ScrollToTopButton({ color }: { color: string }) {
     <AnimatePresence>
       {scrollLength > 1500 && (
         <motion.button
-          className="fixed right-10 bottom-10 z-50 cursor-pointer rounded-full bg-[rgba(0,0,0,0.75)] p-2 backdrop-blur-sm 2xl:right-50"
+          className="fixed right-10 bottom-10 z-50 cursor-pointer rounded-full bg-[rgba(0,0,0,0.65)] p-2 backdrop-blur-sm 2xl:right-50"
           style={{
             border: "2px solid " + color,
             color,
             boxShadow: `0px 0px 15px ${color}`,
           }}
           onClick={() => scrollTo({ top: 0, behavior: "smooth" })}
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.5 }}
+          initial={{ opacity: 0, scale: 0.5, rotate: -270 }}
+          animate={{ opacity: 1, scale: 1, rotate: 0 }}
+          exit={{ opacity: 0, scale: 0.5, rotate: -270 }}
           whileHover={{ scale: 0.95 }}
           whileTap={{ scale: 0.8 }}
           transition={{ duration: 0.2 }}

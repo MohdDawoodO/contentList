@@ -40,6 +40,7 @@ type gameGenreType =
   | "Fantasy"
   | "FPS"
   | "Open World"
+  | "Horror"
   | "Platformer"
   | "RPG"
   | "Racing"
@@ -52,6 +53,7 @@ type bookGenreType =
   | "All"
   | "Action"
   | "Adventure"
+  | "Comedy"
   | "Crime"
   | "Dark Fantasy"
   | "Fantasy"
@@ -186,6 +188,7 @@ export const gameGenreFilter: gameGenreType[] = [
   "Dark Fantasy",
   "Fantasy",
   "FPS",
+  "Horror",
   "Open World",
   "Platformer",
   "RPG",
@@ -199,6 +202,7 @@ export const bookGenreFilter: bookGenreType[] = [
   "All",
   "Action",
   "Adventure",
+  "Comedy",
   "Crime",
   "Dark Fantasy",
   "Fantasy",

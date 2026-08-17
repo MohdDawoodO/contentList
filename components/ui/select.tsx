@@ -41,7 +41,7 @@ export default function Select({
               className="dropdown absolute top-full left-0 z-50 flex w-full translate-y-2 flex-col items-start gap-px overflow-hidden rounded-sm"
               initial={{ y: -20, scale: 0.9, opacity: 0 }}
               animate={{ y: 0, scale: 1, opacity: 1 }}
-              exit={{ y: -10, scale: 0.9, opacity: 0 }}
+              exit={{ y: -20, scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.2 }}
               style={{ background: currentPage.bg }}
             >

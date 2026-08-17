@@ -125,6 +125,18 @@ import openSeason3 from "@/assets/images/movies/open-season-3.jpg";
 import sorcerersApprentice from "@/assets/images/movies/sorcerers-apprentice.jpg";
 import storks from "@/assets/images/movies/storks.jpg";
 import theSheepDetectives from "@/assets/images/movies/the-sheep-detectives.jpg";
+import rickAndMorty from "@/assets/images/movies/rick-and-morty.jpg";
+import invincible from "@/assets/images/movies/invincible.jpg";
+import teenTitans from "@/assets/images/movies/teen-titans.jpg";
+import theMatrix from "@/assets/images/movies/the-matrix.jpg";
+import matrixReloaded from "@/assets/images/movies/matrix-reloaded.jpg";
+import matrixRevolutions from "@/assets/images/movies/matrix-revolutions.jpg";
+import doctorStrange from "@/assets/images/movies/doctor-strange.jpg";
+import antMan from "@/assets/images/movies/ant-man.jpg";
+import guardiansOfTheGalaxy from "@/assets/images/movies/guardians-of-the-galaxy.jpg";
+import guardiansOfTheGalaxy2 from "@/assets/images/movies/guardians-of-the-galaxy-2.jpg";
+import neZha from "@/assets/images/movies/ne-zha.jpg";
+import neZha2 from "@/assets/images/movies/ne-zha-2.jpg";
 import { movieDataType } from "./common-data";
 
 export const movieData: movieDataType[] = [
@@ -1301,5 +1313,119 @@ export const movieData: movieDataType[] = [
     watched: true,
     type: "Movie",
     genre: ["Murder", "Mystery", "Comedy"],
+  },
+  {
+    name: "Rick and Morty",
+    release: new Date("2013-12-02"),
+    rating: 9,
+    episodes: 22,
+    status: "Ongoing",
+    coverImage: rickAndMorty,
+    watched: false,
+    type: "Series",
+    genre: ["Adventure", "Sci-fi", "Comedy", "Dark Fantasy"],
+  },
+  {
+    name: "Teen Titans",
+    release: new Date("2003-07-19"),
+    rating: 7.9,
+    episodes: 65,
+    status: "Finished",
+    coverImage: teenTitans,
+    watched: false,
+    type: "Series",
+    genre: ["Action", "Adventure", "Family", "Fantasy"],
+  },
+  {
+    name: "Invincible",
+    release: new Date("2018-03-18"),
+    rating: 8.7,
+    episodes: 33,
+    status: "Ongoing",
+    coverImage: invincible,
+    watched: false,
+    type: "Series",
+    genre: ["Action", "Adventure", "Fantasy", "Thriller"],
+  },
+  {
+    name: "The Matrix",
+    release: new Date("1999-03-31"),
+    rating: 8.7,
+    coverImage: theMatrix,
+    watched: false,
+    type: "Movie",
+    genre: ["Action", "Sci-fi"],
+  },
+  {
+    name: "Matrix: Reloaded",
+    release: new Date("2003-05-15"),
+    rating: 7.2,
+    coverImage: matrixReloaded,
+    watched: false,
+    type: "Movie",
+    genre: ["Action", "Sci-fi"],
+  },
+  {
+    name: "Matrix: Revolutions",
+    release: new Date("2003-11-05"),
+    rating: 6.7,
+    coverImage: matrixRevolutions,
+    watched: false,
+    type: "Movie",
+    genre: ["Action", "Sci-fi"],
+  },
+  {
+    name: "Doctor Strange",
+    release: new Date("2016-11-04"),
+    rating: 7.5,
+    coverImage: doctorStrange,
+    watched: true,
+    type: "Movie",
+    genre: ["Action", "Adventure", "Fantasy", "Sci-fi"],
+  },
+  {
+    name: "Ant-Man",
+    release: new Date("2015-07-17"),
+    rating: 7.2,
+    coverImage: antMan,
+    watched: true,
+    type: "Movie",
+    genre: ["Action", "Comedy", "Sci-fi"],
+  },
+  {
+    name: "Guardians of the Galaxy",
+    release: new Date("2014-08-01"),
+    rating: 8,
+    coverImage: guardiansOfTheGalaxy,
+    watched: true,
+    type: "Movie",
+    genre: ["Action", "Adventure", "Comedy", "Sci-fi"],
+  },
+  {
+    name: "Guardians of the Galaxy: Vol. 2",
+    release: new Date("2017-05-05"),
+    rating: 7.6,
+    coverImage: guardiansOfTheGalaxy2,
+    watched: true,
+    type: "Movie",
+    genre: ["Action", "Adventure", "Comedy", "Sci-fi"],
+  },
+  {
+    name: "Ne Zha",
+    release: new Date("2019-07-26"),
+    rating: 7.3,
+    coverImage: neZha,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Action", "Comedy", "Fantasy"],
+  },
+  {
+    name: "Ne Zha 2",
+    release: new Date("2025-01-29"),
+    rating: 7.9,
+    coverImage: neZha2,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Action", "Comedy", "Fantasy"],
   },
 ];

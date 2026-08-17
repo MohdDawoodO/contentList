@@ -1,6 +1,6 @@
 "use client";
 
-import AnimeCard from "@/components/anime/anime-card";
+import ContentCard from "@/components/content-card";
 import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
 import { animeData } from "@/data/anime-data";
 import { pages } from "@/data/common-data";
@@ -42,7 +42,7 @@ export default function Anime() {
         }
       >
         {filteredAnime.map((anime, i) => (
-          <AnimeCard
+          <ContentCard
             key={i}
             name={anime.name}
             episodes={anime.episodes}

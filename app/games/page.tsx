@@ -1,6 +1,6 @@
 "use client";
 
-import GameCard from "@/components/games/game-card";
+import ContentCard from "@/components/content-card";
 import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
 import { pages } from "@/data/common-data";
 import { gameData } from "@/data/game-data";
@@ -42,7 +42,7 @@ export default function Game() {
         }
       >
         {filteredGames.map((game, i) => (
-          <GameCard
+          <ContentCard
             key={i}
             name={game.name}
             rating={game.rating}

@@ -1,6 +1,6 @@
 "use client";
 
-import MovieCard from "@/components/movies/movie-card";
+import ContentCard from "@/components/content-card";
 import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
 import { pages } from "@/data/common-data";
 import { movieData } from "@/data/movie-data";
@@ -42,7 +42,7 @@ export default function Movie() {
         }
       >
         {filteredMovies.map((movie, i) => (
-          <MovieCard
+          <ContentCard
             key={i}
             name={movie.name}
             episodes={movie.episodes}
@@ -52,7 +52,6 @@ export default function Movie() {
             status={movie.status}
             genre={movie.genre}
             release={movie.release}
-            type={movie.type}
             currentPage={currentPage}
           />
         ))}

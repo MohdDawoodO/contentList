@@ -35,6 +35,7 @@ import gachiakuta from "@/assets/images/anime/gachiakuta.jpg";
 import erased from "@/assets/images/anime/erased.jpg";
 import futureDiary from "@/assets/images/anime/future-diary.jpg";
 import suzume from "@/assets/images/anime/suzume.jpg";
+import ninetyOneDays from "@/assets/images/anime/91-days.jpg";
 import { animeDataType } from "./common-data";
 
 export const animeData: animeDataType[] = [
@@ -377,5 +378,14 @@ export const animeData: animeDataType[] = [
     watched: false,
     status: "Finished",
     genre: ["Action", "Thriller", "Horror"],
+  },
+  {
+    name: "91 Days",
+    rating: 7.6,
+    episodes: 12,
+    coverImage: ninetyOneDays,
+    watched: false,
+    status: "Finished",
+    genre: ["Crime", "Thriller"],
   },
 ];

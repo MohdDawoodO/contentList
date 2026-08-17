@@ -46,6 +46,28 @@ import CODBo2 from "@/assets/images/games/cod-bo2.png";
 import CODBo3 from "@/assets/images/games/cod-bo3.jpg";
 import CODBoColdWar from "@/assets/images/games/cod-bo-cold-war.jpg";
 import plantVsZombies from "@/assets/images/games/plant-vs-zombies.jpg";
+import uncharted from "@/assets/images/games/uncharted.jpg";
+import uncharted2 from "@/assets/images/games/uncharted-2.jpg";
+import devilMayCry5 from "@/assets/images/games/devil-may-cry-5.jpg";
+import dishonored2 from "@/assets/images/games/dishonored-2.jpg";
+import titanfall2 from "@/assets/images/games/titanfall-2.jpg";
+import atomicHeart from "@/assets/images/games/atomic-heart.jpg";
+import mafia from "@/assets/images/games/mafia.jpg";
+import mafia2 from "@/assets/images/games/mafia-2.jpg";
+import dyingLight from "@/assets/images/games/dying-light.jpg";
+import dyingLight2 from "@/assets/images/games/dying-light-2.jpg";
+import control from "@/assets/images/games/control.jpg";
+import ghostOfYotei from "@/assets/images/games/ghost-of-yotei.jpg";
+import starWarsJedi from "@/assets/images/games/star-wars-jedi.jpg";
+import shadowWarrior from "@/assets/images/games/shadow-warrior.jpg";
+import shadowWarrior2 from "@/assets/images/games/shadow-warrior-2.jpg";
+import shadowWarrior3 from "@/assets/images/games/shadow-warrior-3.jpg";
+import rage2 from "@/assets/images/games/rage-2.jpg";
+import borderlands from "@/assets/images/games/borderlands.jpg";
+import borderlands2 from "@/assets/images/games/borderlands-2.jpg";
+import borderlands3 from "@/assets/images/games/borderlands-3.jpg";
+import doom from "@/assets/images/games/doom.jpg";
+import doomEternals from "@/assets/images/games/doom-eternals.jpg";
 import { gameDataType } from "./common-data";
 
 export const gameData: gameDataType[] = [
@@ -323,7 +345,7 @@ export const gameData: gameDataType[] = [
   },
   {
     name: "God of War",
-    release: new Date("2015-12-01"),
+    release: new Date("2018-04-20"),
     rating: 9.8,
     coverImage: godOfWar,
     played: false,
@@ -432,5 +454,181 @@ export const gameData: gameDataType[] = [
     coverImage: plantVsZombies,
     played: true,
     genre: ["Action", "Strategy"],
+  },
+  {
+    name: "Uncharted: A Thief's End",
+    release: new Date("2016-05-10"),
+    rating: 9.1,
+    coverImage: uncharted,
+    played: false,
+    genre: ["Action", "Shooter"],
+  },
+  {
+    name: "Uncharted: The Lost Legacy",
+    release: new Date("2017-08-22"),
+    rating: 8.3,
+    coverImage: uncharted2,
+    played: false,
+    genre: ["Action", "Shooter"],
+  },
+  {
+    name: "Devil May Cry 5",
+    release: new Date("2019-03-08"),
+    rating: 9.4,
+    coverImage: devilMayCry5,
+    played: false,
+    genre: ["Action", "Dark Fantasy"],
+  },
+  {
+    name: "Dishonored 2",
+    release: new Date("2016-11-11"),
+    rating: 9.1,
+    coverImage: dishonored2,
+    played: false,
+    genre: ["Action", "Dark Fantasy"],
+  },
+  {
+    name: "Titanfall 2",
+    release: new Date("2016-10-28"),
+    rating: 9.4,
+    coverImage: titanfall2,
+    played: false,
+    genre: ["Action", "FPS"],
+  },
+  {
+    name: "Atomic Heart",
+    release: new Date("2023-02-21"),
+    rating: 7.8,
+    coverImage: atomicHeart,
+    played: false,
+    genre: ["Action", "Fantasy"],
+  },
+  {
+    name: "Mafia: Definitive Edition",
+    release: new Date("2020-09-24"),
+    rating: 8.6,
+    coverImage: mafia,
+    played: false,
+    genre: ["Action", "Shooter"],
+  },
+  {
+    name: "Mafia 2",
+    release: new Date("2010-08-24"),
+    rating: 8.1,
+    coverImage: mafia2,
+    played: false,
+    genre: ["Action", "Shooter"],
+  },
+  {
+    name: "Dying Light",
+    release: new Date("2015-01-27"),
+    rating: 8.5,
+    coverImage: dyingLight,
+    played: false,
+    genre: ["Action", "Survival"],
+  },
+  {
+    name: "Dying Light 2",
+    release: new Date("2022-02-04"),
+    rating: 7.1,
+    coverImage: dyingLight2,
+    played: false,
+    genre: ["Action", "Survival"],
+  },
+  {
+    name: "Control",
+    release: new Date("2019-08-27"),
+    rating: 8.6,
+    coverImage: control,
+    played: false,
+    genre: ["Action", "Fantasy"],
+  },
+  {
+    name: "Ghost of Yotei",
+    release: new Date("2025-10-02"),
+    rating: 8.9,
+    coverImage: ghostOfYotei,
+    played: false,
+    genre: ["Action", "Open World"],
+  },
+  {
+    name: "Star Wars Jedi: Fallen Order",
+    release: new Date("2019-11-15"),
+    rating: 9,
+    coverImage: starWarsJedi,
+    played: false,
+    genre: ["Action", "Dark Fantasy"],
+  },
+  {
+    name: "Shadow Warrior",
+    release: new Date("2013-09-23"),
+    rating: 8.3,
+    coverImage: shadowWarrior,
+    played: false,
+    genre: ["Action", "Dark Fantasy"],
+  },
+  {
+    name: "Shadow Warrior 2",
+    release: new Date("2016-10-13"),
+    rating: 8.6,
+    coverImage: shadowWarrior2,
+    played: false,
+    genre: ["Action", "Dark Fantasy"],
+  },
+  {
+    name: "Shadow Warrior 3",
+    release: new Date("2022-03-01"),
+    rating: 7.1,
+    coverImage: shadowWarrior3,
+    played: false,
+    genre: ["Action", "Dark Fantasy"],
+  },
+  {
+    name: "Rage 2",
+    release: new Date("2019-05-14"),
+    rating: 7,
+    coverImage: rage2,
+    played: false,
+    genre: ["Action", "FPS"],
+  },
+  {
+    name: "Borderlands",
+    release: new Date("2009-10-20"),
+    rating: 7.9,
+    coverImage: borderlands,
+    played: false,
+    genre: ["Action", "FPS", "Fantasy"],
+  },
+  {
+    name: "Borderlands 2",
+    release: new Date("2012-09-18"),
+    rating: 9.1,
+    coverImage: borderlands2,
+    played: false,
+    genre: ["Action", "FPS", "Fantasy"],
+  },
+  {
+    name: "Borderlands 3",
+    release: new Date("2019-09-13"),
+    rating: 8.3,
+    coverImage: borderlands3,
+    played: false,
+    genre: ["Action", "FPS", "Fantasy"],
+  },
+  {
+    name: "Doom",
+    release: new Date("2016-05-13"),
+    rating: 8.6,
+    coverImage: doom,
+    played: false,
+    genre: ["Action", "FPS", "Horror"],
+  },
+  {
+    name: "Doom: Eternal",
+    release: new Date("2020-03-20"),
+    rating: 8.8,
+    coverImage: doomEternals,
+    played: false,
+    genre: ["Action", "FPS", "Horror"],
   },
 ];

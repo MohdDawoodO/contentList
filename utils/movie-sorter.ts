@@ -13,7 +13,7 @@ export function movieSorter(
   const sortedData = filteredData.sort((a, b) => {
     switch (method) {
       case "Date":
-        return b.release.getTime() - a.release.getTime();
+        return a.release.getTime() - b.release.getTime();
 
       case "Alphabets":
         return a.name.localeCompare(b.name);

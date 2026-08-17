@@ -22,7 +22,7 @@ export function bookSorter(
         return a.name.localeCompare(b.name);
 
       case "Date":
-        return b.release.getTime() - a.release.getTime();
+        return a.release.getTime() - b.release.getTime();
     }
   });
 

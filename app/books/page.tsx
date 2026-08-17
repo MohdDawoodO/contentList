@@ -1,6 +1,6 @@
 "use client";
 
-import BookCard from "@/components/books/book-card";
+import ContentCard from "@/components/content-card";
 import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
 import { bookData } from "@/data/book-data";
 import { pages } from "@/data/common-data";
@@ -42,7 +42,7 @@ export default function Book() {
         }
       >
         {filteredBooks.map((book, i) => (
-          <BookCard
+          <ContentCard
             key={i}
             name={book.name}
             rating={book.rating}

@@ -1,21 +1,38 @@
-import { movieDataType, pagesDataType } from "@/data/common-data";
-import Image from "next/image";
-import Badge from "../ui/badge";
-import { FaEye, FaStar } from "react-icons/fa";
-import Tooltip from "../ui/tooltip";
+import { pagesDataType } from "@/data/common-data";
+import Image, { StaticImageData } from "next/image";
+import Badge from "./ui/badge";
+import { FaBook, FaEye, FaStar } from "react-icons/fa";
+import Tooltip from "./ui/tooltip";
 import { MdInfo } from "react-icons/md";
+import { IoGameController } from "react-icons/io5";
 
-export default function MovieCard({
+type cardDataType = {
+  name: string;
+  rating: number;
+  coverImage: StaticImageData;
+  played?: boolean;
+  watched?: boolean;
+  read?: boolean;
+  release?: Date;
+  episodes?: number;
+  status?: "Ongoing" | "Finished";
+  genre: string[];
+  currentPage: pagesDataType;
+};
+
+export default function ContentCard({
   name,
+  rating,
+  coverImage,
+  played,
+  watched,
+  read,
   release,
   episodes,
-  rating,
-  watched,
-  coverImage,
   status,
   genre,
   currentPage,
-}: movieDataType & { currentPage: pagesDataType }) {
+}: cardDataType) {
   return (
     <div className="group relative flex h-full flex-col self-start rounded-md">
       <div className="relative min-h-fit overflow-hidden rounded-t-md">
@@ -38,18 +55,19 @@ export default function MovieCard({
           backgroundColor={currentPage.secondary + "bf"}
           className="absolute right-1 bottom-1 p-1 px-3 backdrop-blur-xs"
         >
-          {episodes
-            ? episodes + " Episodes"
-            : (release.getDate() < 10
+          {release && !episodes
+            ? (release.getDate() < 10
                 ? "0" + release.getDate()
                 : release.getDate()) +
               "-" +
-              (release.getMonth() < 10
+              (release.getMonth() + 1 < 10
                 ? "0" + (release.getMonth() + 1)
                 : release.getMonth() + 1) +
               "-" +
-              release.getFullYear()}
+              release.getFullYear()
+            : episodes + " Episodes"}
         </Badge>
+
         {watched && (
           <Badge
             backgroundColor={currentPage.secondary + "bf"}
@@ -57,6 +75,26 @@ export default function MovieCard({
           >
             <Tooltip tooltip="watched!" position="right">
               <FaEye />
+            </Tooltip>
+          </Badge>
+        )}
+        {played && (
+          <Badge
+            backgroundColor={currentPage.secondary + "bf"}
+            className="absolute top-1 right-1 h-6 w-6 backdrop-blur-xs"
+          >
+            <Tooltip tooltip="played!" position="right">
+              <IoGameController />
+            </Tooltip>
+          </Badge>
+        )}
+        {read && (
+          <Badge
+            backgroundColor={currentPage.secondary + "bf"}
+            className="absolute top-1 right-1 h-6 w-6 backdrop-blur-xs"
+          >
+            <Tooltip tooltip="read!" position="right">
+              <FaBook />
             </Tooltip>
           </Badge>
         )}
