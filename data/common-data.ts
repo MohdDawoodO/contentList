@@ -46,6 +46,7 @@ type gameGenreType =
   | "Racing"
   | "Sandbox"
   | "Shooter"
+  | "Soulslike"
   | "Strategy"
   | "Survival";
 
@@ -195,6 +196,7 @@ export const gameGenreFilter: gameGenreType[] = [
   "Racing",
   "Sandbox",
   "Shooter",
+  "Soulslike",
   "Strategy",
   "Survival",
 ];

@@ -137,6 +137,14 @@ import guardiansOfTheGalaxy from "@/assets/images/movies/guardians-of-the-galaxy
 import guardiansOfTheGalaxy2 from "@/assets/images/movies/guardians-of-the-galaxy-2.jpg";
 import neZha from "@/assets/images/movies/ne-zha.jpg";
 import neZha2 from "@/assets/images/movies/ne-zha-2.jpg";
+import kuboAndTheTwoStrings from "@/assets/images/movies/kubo-and-the-two-strings.jpg";
+import spaceJam from "@/assets/images/movies/space-jam-a-new-legacy.jpg";
+import ultimateSpiderMan from "@/assets/images/movies/ultimate-spider-man.jpg";
+import spectacularSpiderMan from "@/assets/images/movies/spectacular-spider-man.jpg";
+import sonicTheHedgehog from "@/assets/images/movies/sonic-the-hedgehog.jpg";
+import shazam from "@/assets/images/movies/shazam.jpg";
+import mandalorian from "@/assets/images/movies/mandalorian.jpg";
+import andor from "@/assets/images/movies/andor.jpg";
 import { movieDataType } from "./common-data";
 
 export const movieData: movieDataType[] = [
@@ -948,7 +956,7 @@ export const movieData: movieDataType[] = [
   {
     name: "Moon Knight",
     release: new Date("2010-07-05"),
-    rating: 9,
+    rating: 7.3,
     episodes: 6,
     status: "Finished",
     coverImage: moonKnight,
@@ -1318,7 +1326,7 @@ export const movieData: movieDataType[] = [
     name: "Rick and Morty",
     release: new Date("2013-12-02"),
     rating: 9,
-    episodes: 22,
+    episodes: 91,
     status: "Ongoing",
     coverImage: rickAndMorty,
     watched: false,
@@ -1427,5 +1435,85 @@ export const movieData: movieDataType[] = [
     watched: true,
     type: "Cartoon",
     genre: ["Action", "Comedy", "Fantasy"],
+  },
+  {
+    name: "Kubo and the Two Strings",
+    release: new Date("2016-08-19"),
+    rating: 7.7,
+    coverImage: kuboAndTheTwoStrings,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Action", "Comedy", "Fantasy"],
+  },
+  {
+    name: "Space Jam: A New Legacy",
+    release: new Date("2021-07-16"),
+    rating: 4.5,
+    coverImage: spaceJam,
+    watched: true,
+    type: "Movie",
+    genre: ["Comedy", "Fantasy", "Sci-fi"],
+  },
+  {
+    name: "Sonic The Hedgehog",
+    release: new Date("2020-02-14"),
+    rating: 6.5,
+    coverImage: sonicTheHedgehog,
+    watched: true,
+    type: "Movie",
+    genre: ["Action", "Comedy", "Fantasy", "Sci-fi"],
+  },
+  {
+    name: "Shazam",
+    release: new Date("2019-04-05"),
+    rating: 7,
+    coverImage: shazam,
+    watched: true,
+    type: "Movie",
+    genre: ["Action", "Comedy", "Fantasy"],
+  },
+  {
+    name: "Ultimate Spider-Man",
+    release: new Date("2012-04-01"),
+    rating: 7.2,
+    episodes: 104,
+    status: "Finished",
+    coverImage: ultimateSpiderMan,
+    watched: true,
+    type: "Series",
+    genre: ["Action", "Comedy", "Fantasy", "Family"],
+  },
+  {
+    name: "The Spectacular Spider-Man",
+    release: new Date("2008-03-01"),
+    rating: 8.4,
+    episodes: 26,
+    status: "Finished",
+    coverImage: spectacularSpiderMan,
+    watched: false,
+    type: "Series",
+    genre: ["Action", "Comedy", "Fantasy", "Family"],
+  },
+  {
+    name: "Mandalorian",
+    release: new Date("2019-11-12"),
+    rating: 8.6,
+    episodes: 24,
+    status: "Finished",
+    coverImage: mandalorian,
+    watched: false,
+    type: "Series",
+    genre: ["Action", "Adventure", "Fantasy", "Sci-fi"],
+  },
+  {
+    name: "Andor",
+    release: new Date("2022-09-21"),
+    rating: 8.6,
+    episodes: 24,
+    status: "Finished",
+    coverImage: andor,
+    watched: false,
+    type: "Series",
+    genre: ["Action", "Adventure", "Fantasy", "Sci-fi"],
   },
 ];

@@ -17,7 +17,6 @@ import spyXFamily from "@/assets/images/anime/spy-x-family.jpg";
 import blueLock from "@/assets/images/anime/blue-lock.jpg";
 import monster from "@/assets/images/anime/monster.jpg";
 import madeInAbyss from "@/assets/images/anime/made-in-abyss.jpg";
-import uzumaki from "@/assets/images/anime/uzumaki.jpg";
 import beyblade from "@/assets/images/anime/beyblade.jpg";
 import moriartyThePatriot from "@/assets/images/anime/moriarty-the-patriot.jpg";
 import towerOfGod from "@/assets/images/anime/tower-of-god.jpg";
@@ -30,7 +29,7 @@ import codeGeass from "@/assets/images/anime/code-geass.jpg";
 import gintama from "@/assets/images/anime/gintama.jpg";
 import steinsGate from "@/assets/images/anime/steins-gate.jpg";
 import fullmetalAlchemist from "@/assets/images/anime/fullmetal-alchemist-brotherhood.jpg";
-import spiritedAway from "@/assets/images/movies/spirited-away.jpg";
+import spiritedAway from "@/assets/images/anime/spirited-away.jpg";
 import gachiakuta from "@/assets/images/anime/gachiakuta.jpg";
 import erased from "@/assets/images/anime/erased.jpg";
 import futureDiary from "@/assets/images/anime/future-diary.jpg";
@@ -216,15 +215,6 @@ export const animeData: animeDataType[] = [
     watched: false,
     status: "Ongoing",
     genre: ["Dark Fantasy", "Adventure", "Sci-fi"],
-  },
-  {
-    name: "Uzumaki",
-    episodes: 4,
-    rating: 6.4,
-    coverImage: uzumaki,
-    watched: false,
-    status: "Finished",
-    genre: ["Dark Fantasy", "Horror"],
   },
   {
     name: "Beyblade",

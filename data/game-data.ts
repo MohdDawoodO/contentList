@@ -68,6 +68,8 @@ import borderlands2 from "@/assets/images/games/borderlands-2.jpg";
 import borderlands3 from "@/assets/images/games/borderlands-3.jpg";
 import doom from "@/assets/images/games/doom.jpg";
 import doomEternals from "@/assets/images/games/doom-eternals.jpg";
+import sekiro from "@/assets/images/games/sekiro-shadows-die-twice.jpg";
+import eldenRing from "@/assets/images/games/elden-ring.jpg";
 import { gameDataType } from "./common-data";
 
 export const gameData: gameDataType[] = [
@@ -196,7 +198,7 @@ export const gameData: gameDataType[] = [
     release: new Date("2012-10-09"),
     rating: 9.2,
     coverImage: dishonored,
-    played: false,
+    played: true,
     genre: ["Action", "Dark Fantasy"],
   },
   {
@@ -237,7 +239,7 @@ export const gameData: gameDataType[] = [
     rating: 9.4,
     coverImage: hollowKnight,
     played: true,
-    genre: ["Action", "Fantasy", "Platformer"],
+    genre: ["Action", "Fantasy", "Platformer", "Soulslike"],
   },
   {
     name: "Hollow Knight: Silksong",
@@ -245,7 +247,7 @@ export const gameData: gameDataType[] = [
     rating: 9,
     coverImage: hollowKnightSilksong,
     played: false,
-    genre: ["Action", "Fantasy", "Platformer"],
+    genre: ["Action", "Fantasy", "Platformer", "Soulslike"],
   },
   {
     name: "Marvel's Spider-Man Remastered",
@@ -557,7 +559,7 @@ export const gameData: gameDataType[] = [
     rating: 9,
     coverImage: starWarsJedi,
     played: false,
-    genre: ["Action", "Dark Fantasy"],
+    genre: ["Action", "Dark Fantasy", "Soulslike"],
   },
   {
     name: "Shadow Warrior",
@@ -630,5 +632,21 @@ export const gameData: gameDataType[] = [
     coverImage: doomEternals,
     played: false,
     genre: ["Action", "FPS", "Horror"],
+  },
+  {
+    name: "Sekiro: Shadows Die Twice",
+    release: new Date("2019-03-22"),
+    rating: 9.1,
+    coverImage: sekiro,
+    played: false,
+    genre: ["Action", "Soulslike"],
+  },
+  {
+    name: "Elden Ring",
+    release: new Date("2022-02-25"),
+    rating: 9.4,
+    coverImage: eldenRing,
+    played: false,
+    genre: ["Action", "Soulslike"],
   },
 ];
