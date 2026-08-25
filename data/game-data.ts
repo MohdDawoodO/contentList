@@ -486,7 +486,7 @@ export const gameData: gameDataType[] = [
     release: new Date("2016-11-11"),
     rating: 9.1,
     coverImage: dishonored2,
-    played: false,
+    played: true,
     genre: ["Action", "Dark Fantasy"],
   },
   {

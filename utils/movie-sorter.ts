@@ -1,4 +1,5 @@
 import { movieDataType, movieSortMethodType } from "@/data/common-data";
+import FuzzySearch from "fuzzy-search";
 
 export function movieSorter(
   data: movieDataType[],
@@ -6,11 +7,12 @@ export function movieSorter(
   searchInput: string,
   reverse: boolean,
 ) {
-  const filteredData = data.filter((a) =>
-    a.name.toLowerCase().includes(searchInput.toLowerCase()),
-  );
+  const searcher = new FuzzySearch(data, ["name"], {
+    caseSensitive: false,
+  });
+  const result = searcher.search(searchInput);
 
-  const sortedData = filteredData.sort((a, b) => {
+  const sortedData = result.sort((a, b) => {
     switch (method) {
       case "Date":
         return a.release.getTime() - b.release.getTime();

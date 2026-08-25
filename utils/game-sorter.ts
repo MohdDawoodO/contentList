@@ -1,4 +1,5 @@
 import { gameDataType, gameSortMethodType } from "@/data/common-data";
+import FuzzySearch from "fuzzy-search";
 
 export function gameSorter(
   data: gameDataType[],
@@ -6,11 +7,12 @@ export function gameSorter(
   searchInput: string,
   reverse: boolean,
 ) {
-  const filteredData = data.filter((a) =>
-    a.name.toLowerCase().includes(searchInput.toLowerCase()),
-  );
+  const searcher = new FuzzySearch(data, ["name"], {
+    caseSensitive: false,
+  });
+  const result = searcher.search(searchInput);
 
-  const sortedData = filteredData.sort((a, b) => {
+  const sortedData = result.sort((a, b) => {
     switch (method) {
       case "Rating":
         if (a.rating === b.rating) {

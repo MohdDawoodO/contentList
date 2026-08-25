@@ -145,6 +145,10 @@ import sonicTheHedgehog from "@/assets/images/movies/sonic-the-hedgehog.jpg";
 import shazam from "@/assets/images/movies/shazam.jpg";
 import mandalorian from "@/assets/images/movies/mandalorian.jpg";
 import andor from "@/assets/images/movies/andor.jpg";
+import frankenstein from "@/assets/images/movies/frankenstein.jpg";
+import sixUnground from "@/assets/images/movies/6unground.jpg";
+import minionsAndMonsters from "@/assets/images/movies/minions-and-monsters.jpg";
+import severance from "@/assets/images/movies/severance.jpg";
 import { movieDataType } from "./common-data";
 
 export const movieData: movieDataType[] = [
@@ -1515,5 +1519,43 @@ export const movieData: movieDataType[] = [
     watched: false,
     type: "Series",
     genre: ["Action", "Adventure", "Fantasy", "Sci-fi"],
+  },
+  {
+    name: "Frankenstein",
+    release: new Date("2025-08-30"),
+    rating: 7.4,
+    coverImage: frankenstein,
+    watched: true,
+    type: "Movie",
+    genre: ["Dark Fantasy", "Sci-fi", "Horror"],
+  },
+  {
+    name: "6 Underground",
+    release: new Date("2019-12-13"),
+    rating: 6.1,
+    coverImage: sixUnground,
+    watched: true,
+    type: "Movie",
+    genre: ["Action", "Comedy", "Thriller"],
+  },
+  {
+    name: "Minions & Monsters",
+    release: new Date("2026-07-01"),
+    rating: 6.4,
+    coverImage: minionsAndMonsters,
+    watched: true,
+    type: "Cartoon",
+    genre: ["Adventure", "Comedy", "Family"],
+  },
+  {
+    name: "Severance",
+    release: new Date("2022-02-18"),
+    rating: 8.6,
+    episodes: 19,
+    status: "Ongoing",
+    coverImage: severance,
+    watched: false,
+    type: "Series",
+    genre: ["Mystery", "Thriller", "Sci-fi"],
   },
 ];

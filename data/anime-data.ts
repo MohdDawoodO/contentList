@@ -17,7 +17,6 @@ import spyXFamily from "@/assets/images/anime/spy-x-family.jpg";
 import blueLock from "@/assets/images/anime/blue-lock.jpg";
 import monster from "@/assets/images/anime/monster.jpg";
 import madeInAbyss from "@/assets/images/anime/made-in-abyss.jpg";
-import beyblade from "@/assets/images/anime/beyblade.jpg";
 import moriartyThePatriot from "@/assets/images/anime/moriarty-the-patriot.jpg";
 import towerOfGod from "@/assets/images/anime/tower-of-god.jpg";
 import summertimeRendering from "@/assets/images/anime/summertime-remdering.jpg";
@@ -35,6 +34,10 @@ import erased from "@/assets/images/anime/erased.jpg";
 import futureDiary from "@/assets/images/anime/future-diary.jpg";
 import suzume from "@/assets/images/anime/suzume.jpg";
 import ninetyOneDays from "@/assets/images/anime/91-days.jpg";
+import boruto from "@/assets/images/anime/boruto.jpg";
+import bleachTYBW from "@/assets/images/anime/bleach-tybw.jpg";
+import blackClover from "@/assets/images/anime/black-clover.jpg";
+import narutoShippuden from "@/assets/images/anime/naruto-shippuden.jpg";
 import { animeDataType } from "./common-data";
 
 export const animeData: animeDataType[] = [
@@ -49,17 +52,17 @@ export const animeData: animeDataType[] = [
   },
   {
     name: "Bleach",
-    episodes: 418,
-    rating: 8.6,
+    episodes: 366,
+    rating: 8.3,
     coverImage: bleach,
     watched: true,
-    status: "Ongoing",
+    status: "Finished",
     genre: ["Action", "Adventure", "Comedy", "Fantasy"],
   },
   {
     name: "Naruto",
-    episodes: 720,
-    rating: 8.5,
+    episodes: 220,
+    rating: 8.4,
     coverImage: naruto,
     watched: true,
     status: "Finished",
@@ -156,7 +159,7 @@ export const animeData: animeDataType[] = [
     genre: ["Adventure", "Sci-fi", "Comedy"],
   },
   {
-    name: "The Promised Neverland",
+    name: "The Promised Neverland: Season 1",
     episodes: 12,
     rating: 8.9,
     coverImage: promisedNeverland,
@@ -215,15 +218,6 @@ export const animeData: animeDataType[] = [
     watched: false,
     status: "Ongoing",
     genre: ["Dark Fantasy", "Adventure", "Sci-fi"],
-  },
-  {
-    name: "Beyblade",
-    episodes: 864,
-    rating: 7.0,
-    coverImage: beyblade,
-    watched: false,
-    status: "Ongoing",
-    genre: ["Action", "Adventure"],
   },
   {
     name: "Moriarty The Patriot",
@@ -356,7 +350,7 @@ export const animeData: animeDataType[] = [
     rating: 8.4,
     episodes: 12,
     coverImage: erased,
-    watched: false,
+    watched: true,
     status: "Finished",
     genre: ["Mystery", "Thriller", "Sci-fi"],
   },
@@ -377,5 +371,41 @@ export const animeData: animeDataType[] = [
     watched: false,
     status: "Finished",
     genre: ["Crime", "Thriller"],
+  },
+  {
+    name: "Bleach: Thousand Year Blood War",
+    rating: 9,
+    episodes: 50,
+    coverImage: bleachTYBW,
+    watched: false,
+    status: "Ongoing",
+    genre: ["Action", "Dark Fantasy", "Comedy"],
+  },
+  {
+    name: "Black Clover",
+    rating: 8.2,
+    episodes: 170,
+    coverImage: blackClover,
+    watched: false,
+    status: "Ongoing",
+    genre: ["Action", "Fantasy", "Comedy"],
+  },
+  {
+    name: "Naruto: Shippuden",
+    rating: 8.7,
+    episodes: 500,
+    coverImage: narutoShippuden,
+    watched: true,
+    status: "Finished",
+    genre: ["Action", "Adventure", "Comedy", "Family"],
+  },
+  {
+    name: "Boruto: Naruto Next Generations",
+    rating: 6.3,
+    episodes: 293,
+    coverImage: boruto,
+    watched: true,
+    status: "Finished",
+    genre: ["Action", "Adventure", "Comedy", "Family"],
   },
 ];
